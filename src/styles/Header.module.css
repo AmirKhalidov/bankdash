@@ -1,0 +1,144 @@
+header {
+  align-self: start;
+  width: 100%;
+  height: min-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid rgba(230, 239, 245, 0.5);
+  background: linear-gradient(180deg, #ffffff, #fafbfc);
+}
+
+h2 {
+  color: rgb(52, 60, 106);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  transition: color 0.2s ease;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 40px;
+  background-color: rgb(245, 247, 250);
+  padding: 10px 6px 10px 20px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.search:focus-within {
+  background-color: #ffffff;
+  border-color: rgba(45, 96, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(45, 96, 255, 0.1);
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline-style: none;
+  transition: all 0.2s ease;
+}
+
+input::placeholder {
+  color: rgb(139, 163, 203);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  transition: color 0.2s ease;
+}
+
+.searchIcon {
+  color: rgb(113, 142, 191);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.search:focus-within .searchIcon {
+  color: rgb(45, 96, 255);
+}
+
+.navButton {
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(45, 96, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.iconNavSettings,
+.iconNavNotification {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s ease;
+}
+
+.navButton:hover .iconNavSettings,
+.navButton:hover .iconNavNotification {
+  transform: scale(1.1);
+}
+
+.iconNavSettings {
+  color: rgb(113, 142, 191);
+}
+
+.iconNavNotification {
+  color: rgb(254, 92, 115);
+}
+
+.navButtonProfile {
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navButtonProfile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.navButtonProfile:hover::before {
+  border-color: rgba(45, 96, 255, 0.3);
+}
+
+.navButtonProfile:hover {
+  transform: scale(1.05);
+}
+
+.profilePic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}

@@ -1,0 +1,99 @@
+/* CONTENT1 */
+.content1 {
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  gap: 54px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.content1__img {
+  margin-right: 54px;
+}
+
+.col2 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-right: 29px;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.yourName__label,
+.email__label,
+.dateBirth__label,
+.permAddress__label,
+.postal__label,
+.userName__label,
+.password__label,
+.presAddress__label,
+.city__label,
+.country__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.yourName__input,
+.email__input,
+.dateBirth__input,
+.permAddress__input,
+.postal__input,
+.userName__input,
+.password__input,
+.presAddress__input,
+.city__input,
+.country__input {
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 234, 242);
+  border-radius: 15px;
+  background: rgb(255, 255, 255);
+  padding: 16px 20px;
+}
+
+.yourName__input::placeholder,
+.email__input::placeholder,
+.dateBirth__input::placeholder,
+.permAddress__input::placeholder,
+.postal__input::placeholder,
+.userName__input::placeholder,
+.password__input::placeholder,
+.presAddress__input::placeholder,
+.city__input::placeholder,
+.country__input::placeholder {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.content1__btn {
+  padding: 14px 74px;
+  border-radius: 15px;
+  background: rgb(24, 20, 243);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: -50px;
+}

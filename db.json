@@ -1,0 +1,259 @@
+{
+  "user": {
+    "id": 1,
+    "name": "Charlene Reed",
+    "email": "charlene@example.com",
+    "username": "charlenereed",
+    "dob": "1990-01-25",
+    "address": {
+      "permanent": "San Jose, California, USA",
+      "present": "San Jose, California, USA",
+      "city": "San Jose",
+      "postalCode": "45962",
+      "country": "USA"
+    },
+    "avatar": "/assets/avatar.png",
+    "settings": {
+      "currency": "USD",
+      "timezone": "(GMT-12:00) International Date Line West",
+      "notifications": {
+        "sendReceive": true,
+        "merchantOrder": false,
+        "recommendations": true
+      },
+      "security": {
+        "twoFactorAuth": true,
+        "currentPassword": "********",
+        "newPassword": ""
+      }
+    }
+  },
+  "cards": [
+    {
+      "id": 1,
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "visa",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756.00,
+      "theme": "dark"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "mastercard",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756.00,
+      "theme": "light"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "visa",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756.00,
+      "theme": "blue"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "userId": 1,
+      "description": "Deposit from my Card",
+      "transactionDate": "28 January 2021",
+      "amount": -850,
+      "type": "card",
+      "status": "pending",
+      "icon": "card"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "description": "Deposit Paypal",
+      "transactionDate": "25 January 2021",
+      "amount": 2500,
+      "type": "paypal",
+      "status": "completed",
+      "icon": "paypal"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "description": "Jemi Wilson",
+      "transactionDate": "21 January 2021",
+      "amount": 5400,
+      "type": "transfer",
+      "status": "completed",
+      "icon": "user"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "description": "Shopping",
+      "transactionDate": "28 January 2021",
+      "amount": -4000,
+      "type": "shopping",
+      "status": "pending",
+      "icon": "shopping"
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "description": "Transfer",
+      "transactionDate": "25 January 2021",
+      "amount": -200,
+      "type": "transfer",
+      "status": "completed",
+      "icon": "transfer"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "accountType": "Checking",
+      "bankName": "DBL Bank",
+      "accountNumber": "**** **** 5600",
+      "balance": 25000,
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "accountType": "Savings",
+      "bankName": "BRC Bank",
+      "accountNumber": "**** **** 4300",
+      "balance": 25000,
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "accountType": "Investment",
+      "bankName": "ABM Bank",
+      "accountNumber": "**** **** 7000",
+      "balance": 25000,
+      "status": "active"
+    }
+  ],
+  "investments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "company": "Apple Store",
+      "symbol": "AAPL",
+      "amount": 54000,
+      "return": "+16%",
+      "returnType": "positive",
+      "icon": "apple"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "company": "Samsung Mobile",
+      "symbol": "SMSN",
+      "amount": 25300,
+      "return": "-4%",
+      "returnType": "negative",
+      "icon": "samsung"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "company": "Tesla Motors",
+      "symbol": "TSLA",
+      "amount": 8200,
+      "return": "+25%",
+      "returnType": "positive",
+      "icon": "tesla"
+    }
+  ],
+  "loans": [
+    {
+      "id": 1,
+      "userId": 1,
+      "loanType": "Personal Loan",
+      "amount": 8500,
+      "totalRepayment": 40500,
+      "interestRate": 4.5,
+      "duration": "8 Months",
+      "monthlyPayment": 2500,
+      "status": "active",
+      "startDate": "2024-01-15",
+      "endDate": "2024-09-15"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "loanType": "Corporate Loan",
+      "amount": 12500,
+      "totalRepayment": 54500,
+      "interestRate": 3.5,
+      "duration": "12 Months",
+      "monthlyPayment": 3500,
+      "status": "active",
+      "startDate": "2024-02-01",
+      "endDate": "2025-02-01"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "loanType": "Business Loan",
+      "amount": 15000,
+      "totalRepayment": 65000,
+      "interestRate": 5.0,
+      "duration": "18 Months",
+      "monthlyPayment": 4200,
+      "status": "pending",
+      "startDate": "2024-03-01",
+      "endDate": "2025-09-01"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "userId": 1,
+      "serviceName": "Life Insurance",
+      "description": "Unlimited protection",
+      "icon": "shield",
+      "status": "active",
+      "monthlyFee": 50,
+      "benefits": ["24/7 Support", "Worldwide Coverage", "Emergency Assistance"]
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "serviceName": "Shopping",
+      "description": "Buy. Think. Grow.",
+      "icon": "shopping",
+      "status": "active",
+      "monthlyFee": 0,
+      "benefits": ["Cashback Rewards", "Price Protection", "Purchase Insurance"]
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "serviceName": "Safety",
+      "description": "We are your allies",
+      "icon": "safety",
+      "status": "inactive",
+      "monthlyFee": 25,
+      "benefits": ["Fraud Protection", "Identity Monitoring", "Secure Transactions"]
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "serviceName": "Investment",
+      "description": "Grow your wealth",
+      "icon": "investment",
+      "status": "active",
+      "monthlyFee": 15,
+      "benefits": ["Expert Advice", "Portfolio Management", "Market Analysis"]
+    }
+  ]
+}

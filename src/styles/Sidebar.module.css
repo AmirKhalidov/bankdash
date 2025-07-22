@@ -1,0 +1,62 @@
+nav {
+  grid-row: 1 / -1;
+  padding: 32px 40px;
+  border-right: rgb(230, 239, 245) 1px solid;
+  width: 264px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: rgb(177, 177, 177);
+  transition: color 0.2s ease;
+}
+
+.logo {
+  margin-bottom: 52px;
+  display: inline-block;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.2s ease;
+}
+
+.listItem:hover {
+  transform: translateX(3px);
+}
+
+.listItem:hover .icon {
+  color: rgba(45, 97, 255, 0.911);
+}
+
+.listItem:hover .listItemTitle {
+  color: rgba(45, 97, 255, 0.911);
+}
+
+.icon.active {
+  color: rgb(45, 97, 255);
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.listItemTitle {
+  color: rgb(177, 177, 177);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  transition: color 0.2s ease;
+}
+
+.listItemTitle.active {
+  color: rgb(45, 96, 255);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}

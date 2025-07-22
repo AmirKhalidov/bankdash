@@ -1,0 +1,412 @@
+.userName__input,
+.password__input {
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 234, 242);
+  border-radius: 15px;
+  background: rgb(255, 255, 255) !important;
+  padding: 16px 20px;
+  -webkit-box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset !important;
+  -webkit-text-fill-color: rgb(35, 35, 35) !important;
+}
+
+.userName__input:-webkit-autofill,
+.password__input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset !important;
+  -webkit-text-fill-color: rgb(35, 35, 35) !important;
+}
+
+/* MAIN */
+main {
+  grid-column: 2;
+  background-color: rgb(245, 247, 250);
+  padding: 24px 40px;
+}
+
+/* SETTINGS */
+.settings {
+  border-radius: 25px;
+  background: rgb(255, 255, 255);
+  padding: 37px 30px 30px 30px;
+}
+
+.settings__menu {
+  display: flex;
+  gap: 72px;
+  margin-bottom: 52px;
+}
+
+.settings__menuItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.settings__menuLink {
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.settings__menuLink {
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+/* Add active state styling */
+.settings__menuLink.active {
+  color: rgb(24, 20, 243);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.settings__menuItem:hover .settings__menuLink {
+  color: rgb(24, 20, 243);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.settings__menuItemHover {
+  width: 114px;
+  height: 3px;
+  border-radius: 10px 10px 0px 0px;
+  background: rgb(24, 20, 243);
+  visibility: hidden;
+}
+
+.settings__menuItem:has(.settings__menuLink.active) .settings__menuItemHover {
+  visibility: visible;
+}
+
+.settings__menuItem:hover .settings__menuItemHover {
+  visibility: visible;
+}
+
+.settings__menuItem:hover .settings__menuLink {
+  color: rgb(24, 20, 243);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.settings__menuItemHover {
+  width: 114px;
+  height: 3px;
+  border-radius: 10px 10px 0px 0px;
+  background: rgb(24, 20, 243);
+  visibility: hidden;
+}
+
+.settings__menuItem:hover .settings__menuItemHover {
+  visibility: visible;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+/* CONTENT1 */
+.content1 {
+  display: flex;
+  align-items: start;
+  justify-content: end;
+  gap: 54px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.content1__img {
+  margin-right: 54px;
+}
+
+.col2 {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-right: 29px;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.yourName__label,
+.email__label,
+.dateBirth__label,
+.permAddress__label,
+.postal__label,
+.userName__label,
+.password__label,
+.presAddress__label,
+.city__label,
+.country__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.yourName__input,
+.email__input,
+.dateBirth__input,
+.permAddress__input,
+.postal__input,
+.userName__input,
+.password__input,
+.presAddress__input,
+.city__input,
+.country__input {
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 234, 242);
+  border-radius: 15px;
+  background: rgb(255, 255, 255);
+  padding: 16px 20px;
+}
+
+.yourName__input::placeholder,
+.email__input::placeholder,
+.dateBirth__input::placeholder,
+.permAddress__input::placeholder,
+.postal__input::placeholder,
+.userName__input::placeholder,
+.password__input::placeholder,
+.presAddress__input::placeholder,
+.city__input::placeholder,
+.country__input::placeholder {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.content1__btn {
+  padding: 14px 74px;
+  border-radius: 15px;
+  background: rgb(24, 20, 243);
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: -50px;
+}
+
+/* CONTENT2 */
+.content2 {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 27px;
+}
+
+.currency,
+.timeZone {
+  width: 100%;
+}
+
+.currency__label,
+.timeZone__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.currency__input,
+.timeZone__input {
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 234, 242);
+  border-radius: 15px;
+  padding: 16px 20px;
+  background: rgb(255, 255, 255);
+}
+
+.currency__input::placeholder,
+.timeZone__input::placeholder {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.notification {
+  margin-bottom: 27px;
+}
+
+.notification__text {
+  color: rgb(51, 59, 105);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 21px;
+}
+
+.notification__item {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 18px;
+}
+
+.notification__checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.notification__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.saveBtn__wrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.saveBtn {
+  border-radius: 15px;
+  border: none;
+  background: rgb(24, 20, 243);
+  cursor: pointer;
+  padding: 14px 74px;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+/* SECTION 3 */
+.content3 {
+  margin-bottom: 30px;
+}
+
+.factor2 {
+  margin-bottom: 28px;
+}
+
+.factor2__text {
+  color: rgb(51, 59, 105);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 21px;
+}
+
+.factor2__item {
+  display: flex;
+  gap: 22px;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.factor2__switch {
+  cursor: pointer;
+}
+
+.factor2__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.pass__title {
+  color: rgb(51, 59, 105);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-bottom: 26px;
+}
+
+.currPassword,
+.newPassword {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 22px;
+}
+
+.newPassword {
+  margin-bottom: 30px;
+}
+
+.currPassword__label,
+.newPassword__label {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.currPassword__input,
+.newPassword__input {
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 234, 242);
+  border-radius: 15px;
+  background: rgb(255, 255, 255);
+  width: 510px;
+  padding: 16px 20px;
+}
+
+.currPassword__input::placeholder,
+.newPassword__input::placeholder {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
