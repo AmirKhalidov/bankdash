@@ -31,9 +31,6 @@ const Services: React.FC = () => {
 
   const [selected, setSelected] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
-    null
-  );
 
   useEffect(() => {
     if (status === "idle") {
@@ -41,15 +38,14 @@ const Services: React.FC = () => {
     }
   }, [dispatch, status]);
 
-  const handleViewDetails = (service: Service, index: number): void => {
+  const handleViewDetails = (service: Service): void => {
     setSelected(service);
     setIsModalOpen(true);
-    setActiveButtonIndex(index);
   };
 
   const renderIconBlocks = (): ReactNode => {
     if (bankServices.length === 0) return null;
-    return bankServices.slice(0, 3).map((service: Service, index: number) => (
+    return bankServices.slice(0, 3).map((service: Service) => (
       <div key={service.id} className={styles.iconBlock}>
         <div className={styles.iconCircle}>
           <img src={service.icon} alt={service.title} />
@@ -73,7 +69,7 @@ const Services: React.FC = () => {
       )}
 
       {status === "succeeded" &&
-        bankServices.map((service: Service, index: number) => (
+        bankServices.map((service: Service) => (
           <div key={service.id} className={styles.card}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <div className={styles.iconBox}>
@@ -99,32 +95,11 @@ const Services: React.FC = () => {
               </div>
             </div>
             <button
-              className={`${styles.viewDetailsButton} ${
-                activeButtonIndex === index ? styles.active : ""
-              }`}
-              onClick={() => handleViewDetails(service, index)}
+              className={styles.viewDetailsButton}
+              onClick={() => handleViewDetails(service)}
             >
-              {activeButtonIndex === index ? "Hide Details" : "View Details"}
+              View Details
             </button>
-            {activeButtonIndex === index && (
-              <div className={styles.detailsContainer}>
-                <p>
-                  <b>Details:</b> {service.details}
-                </p>
-                <p>
-                  <b>Additional Info:</b> {service.additionalInfo}
-                </p>
-                <p>
-                  <b>Offer:</b> {service.offer}
-                </p>
-                <p>
-                  <b>Validity:</b> {service.validity}
-                </p>
-                <p>
-                  <b>Contact:</b> {service.contact}
-                </p>
-              </div>
-            )}
           </div>
         ))}
 
