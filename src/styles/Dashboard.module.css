@@ -247,6 +247,7 @@ main {
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
+  font-weight: 500;
 }
 
 .transDate {
@@ -300,6 +301,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 322px;
+  padding: 0px 24px 0px 0px;
 }
 
 .statisticsTitle {
@@ -367,6 +369,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px 18px 0px 0px;
+  height: 276px;
 }
 
 .cardsBtn {
