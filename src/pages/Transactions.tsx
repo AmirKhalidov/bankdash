@@ -1,11 +1,45 @@
 import { useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
-import styles from "../styles/Dashboard.module.css";
+import styles from "../styles/Transactions.module.css";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchCreditCardData, fetchTransactions } from "../redux/operations";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Cell,
+} from "recharts";
+
+const data = [
+  { name: "Aug", value: 7000 },
+  { name: "Sep", value: 10000 },
+  { name: "Oct", value: 8500 },
+  { name: "Nov", value: 4000 },
+  { name: "Dec", value: 12500 },
+  { name: "Jan", value: 7500 },
+];
+
+const RoundedBar = (props: any) => {
+  const { x, y, width, height, fill } = props;
+  const radius = 10;
+  return (
+    <rect
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      fill={fill}
+      rx={radius}
+      ry={radius}
+    />
+  );
+};
 
 export default function Transactions() {
   const dispatch = useDispatch<AppDispatch>();
@@ -109,6 +143,25 @@ export default function Transactions() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className={styles.transactionChart}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={data} barSize={30}>
+                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                  <YAxis hide />
+                  <Tooltip
+                    formatter={(value: number) => `$${value.toLocaleString()}`}
+                  />
+                  <Bar dataKey="value" shape={<RoundedBar />}>
+                    {data.map((entry, index) => (
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.name === "Dec" ? "#00CFC3" : "#E8ECF4"}
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </section>
         </main>
