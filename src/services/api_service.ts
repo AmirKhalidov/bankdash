@@ -11,8 +11,13 @@ const apiClient = axios.create({
 });
 
 export const api = {
-  getUser: async (id: number) => {
-    const response = await apiClient.get(`/users/${id}`);
+  getUser: async () => {
+    const response = await apiClient.get(`/user`);
     return response.data;
+  },
+
+  getServices: async () => {
+    const response = await apiClient.get("/user");
+    return response.data.services;
   },
 };
