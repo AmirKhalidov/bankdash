@@ -63,6 +63,7 @@
 
 .notification__item {
   display: flex;
+  align-items: center;
   gap: 22px;
   margin-bottom: 18px;
 }

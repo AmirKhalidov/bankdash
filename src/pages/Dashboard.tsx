@@ -4,12 +4,13 @@ import styles from "../styles/Dashboard.module.css";
 import { useDispatch } from "react-redux";
 import { useEffect, useRef, useState } from "react";
 import { fetchCreditCardData, fetchTransactions } from "../redux/operations";
-import Spinner from "../components/Spinner";
 import ExpensesChart from "../components/ExpensesChart";
 import ActivityChart from "../components/ActivityChart";
 import AreaChartComponent from "../components/AreaChartComponent";
 
 export default function Dashboard() {
+  const [showModal, setShowModal] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const cardsBtnRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch<AppDispatch>();
@@ -58,14 +59,28 @@ export default function Dashboard() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!showModal) return;
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setShowModal(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showModal]);
+
   const [card] = cards;
   const recentTransactions = transactions.slice(0, 3);
 
   return (
     <>
-      {loading && <Spinner size="large" />}
-
-      {cards.length > 0 && (
+      {!loading && card && (
         <main>
           <section className={styles.cardsTransactions}>
             <div className={styles.myCards}>
@@ -255,9 +270,27 @@ export default function Dashboard() {
 
                 <div className={styles.amountBtn}>
                   <p>Write Amount</p>
+                  {showModal && (
+                    <div className={styles.overlay}>
+                      <div className={styles.modal} ref={modalRef}>
+                        <p className={styles.text}>
+                          You have successfully sent $525.50
+                        </p>
+                        <button
+                          className={styles.button}
+                          onClick={() => setShowModal(false)}
+                        >
+                          OK
+                        </button>
+                      </div>
+                    </div>
+                  )}
                   <button
                     className={styles.amountBtnClickable}
-                    onClick={() => alert(`You have sent $525.50`)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setShowModal(true);
+                    }}
                   >
                     <img
                       src="src\assets\dashboard\Group 311.png"

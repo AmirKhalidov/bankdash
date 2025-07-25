@@ -1,5 +1,3 @@
 export default function Privileges() {
-  return (
-    <div>Privileges</div>
-  )
+  return <div>Privileges</div>;
 }
