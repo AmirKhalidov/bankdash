@@ -412,14 +412,36 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 7px;
+  cursor: pointer;
 }
 
 .amountBtn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 28px;
 }
 
 .amountBtn img {
   cursor: pointer;
+}
+
+.selectedTransferImg {
+  box-shadow: 0 0 0 3px #1814f3;
+  border-radius: 50%;
+}
+
+.inputDiv {
+  width: 100%;
+}
+
+.amountInput {
+  background-color: #edf1f7;
+  width: 65%;
+  padding: 16px 0px 16px 32px;
+  border-radius: 50px;
+}
+
+.amountBtnClickable {
+  all: unset;
 }

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import type { CreditCard } from "./creditCardsSlice";
-import type { Transaction } from "./transactionsSlice";
+import type { CreditCard } from "../types/creditCardsSliceTypes";
+import type { Transaction } from "../types/transactionsSliceTypes";
 
 export const fetchCreditCardData = createAsyncThunk(
   "creditCards/fetchCreditCardData",

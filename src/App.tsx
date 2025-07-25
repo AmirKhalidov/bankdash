@@ -1,18 +1,20 @@
 import { Navigate, Route, Routes } from "react-router";
+import { lazy } from "react";
 import "./App.css";
-import Layout from "./components/Layout";
-import Dashboard from "./pages/Dashboard";
-import Transactions from "./pages/Transactions";
-import Accounts from "./pages/Accounts";
-import Investments from "./pages/Investments";
-import CreditCards from "./pages/CreditCards";
-import Loans from "./pages/Loans";
-import Services from "./pages/Services";
-import Privileges from "./pages/Privileges";
-import Settings from "./pages/Settings";
-import EditProfile from "./components/EditProfile";
-import Preferences from "./components/Preferences";
-import Security from "./components/Security";
+
+const Layout = lazy(() => import("./components/Layout"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Transactions = lazy(() => import("./pages/Transactions"));
+const Accounts = lazy(() => import("./pages/Accounts"));
+const Investments = lazy(() => import("./pages/Investments"));
+const CreditCards = lazy(() => import("./pages/CreditCards"));
+const Loans = lazy(() => import("./pages/Loans"));
+const Services = lazy(() => import("./pages/Services"));
+const Privileges = lazy(() => import("./pages/Privileges"));
+const Settings = lazy(() => import("./pages/Settings"));
+const EditProfile = lazy(() => import("./components/EditProfile"));
+const Preferences = lazy(() => import("./components/Preferences"));
+const Security = lazy(() => import("./components/Security"));
 
 function App() {
   return (

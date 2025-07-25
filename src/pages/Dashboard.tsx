@@ -2,15 +2,16 @@ import { useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
 import styles from "../styles/Dashboard.module.css";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchCreditCardData, fetchTransactions } from "../redux/operations";
 import Spinner from "../components/Spinner";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from "recharts";
-import { AreaChart, Area } from "recharts";
-import type { PieLabelRenderProps } from "recharts";
+import ExpensesChart from "../components/ExpensesChart";
+import ActivityChart from "../components/ActivityChart";
+import AreaChartComponent from "../components/AreaChartComponent";
 
 export default function Dashboard() {
+  const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const cardsBtnRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch<AppDispatch>();
   const { cards, loading } = useSelector(
     (state: RootState) => state.creditCards
@@ -19,90 +20,43 @@ export default function Dashboard() {
     (state: RootState) => state.transactions
   );
 
-  // const expenses = transactions?.filter((tx) => tx.amount < 0);
-
-  // const fetchedExpenseData = Object.values(
-  //   expenses.reduce(
-  //     (acc: { [key: string]: { name: string; value: number } }, exp) => {
-  //       const key = exp.type;
-  //       if (!acc[key]) {
-  //         acc[key] = { name: key, value: Math.abs(exp.amount) };
-  //       } else {
-  //         acc[key].value += Math.abs(exp.amount);
-  //       }
-  //       return acc;
-  //     },
-  //     {}
-  //   )
-  // );
-
-  const expenseData = [
-    { name: "Shopping", value: 4000 },
-    { name: "Deposit", value: 1850 },
-    { name: "Paypal", value: 2500 },
-    { name: "Other", value: 5400 },
-  ];
-  const COLORS = ["#343C6A", "#FC7900", "#1814F3", "#FA00FF"];
-
-  const areaData = [
-    { month: "Jul", balance: 200 },
-    { month: "Aug", balance: 400 },
-    { month: "Sep", balance: 600 },
-    { month: "Oct", balance: 500 },
-    { month: "Nov", balance: 700 },
-    { month: "Dec", balance: 650 },
-    { month: "Jan", balance: 800 },
-  ];
-
-  const renderCustomLabel = (props: PieLabelRenderProps) => {
-    const {
-      cx = 0,
-      cy = 0,
-      midAngle = 0,
-      innerRadius = 0,
-      outerRadius = 0,
-      percent = 0,
-      index = 0,
-    } = props;
-
-    const RADIAN = Math.PI / 180;
-    const radius =
-      Number(innerRadius) + (Number(outerRadius) - Number(innerRadius)) * 0.7;
-    const x = Number(cx) + radius * Math.cos(-midAngle * RADIAN);
-    const y = Number(cy) + radius * Math.sin(-midAngle * RADIAN);
-
-    return (
-      <text
-        x={x}
-        y={y}
-        fill="#fff"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={16}
-        fontWeight="bold"
-      >
-        {`${(percent * 100).toFixed(0)}%`}
-        <tspan x={x} y={y + 16} fontSize={13} fontWeight="bold">
-          {expenseData[index]?.name}
-        </tspan>
-      </text>
-    );
-  };
-
-  const barData = [
-    { day: "Sat", Deposit: 1200, Withdraw: 800 },
-    { day: "Sun", Deposit: 900, Withdraw: 700 },
-    { day: "Mon", Deposit: 1400, Withdraw: 1100 },
-    { day: "Tue", Deposit: 1000, Withdraw: 600 },
-    { day: "Wed", Deposit: 1700, Withdraw: 900 },
-    { day: "Thu", Deposit: 1300, Withdraw: 1200 },
-    { day: "Fri", Deposit: 1600, Withdraw: 1000 },
+  const transferCards = [
+    {
+      img: "src\\assets\\dashboard\\Mask Group.png",
+      name: "Livia Bator",
+      position: "CEO",
+    },
+    {
+      img: "src\\assets\\dashboard\\Mask Group (1).png",
+      name: "Randy Press",
+      position: "Director",
+    },
+    {
+      img: "src\\assets\\dashboard\\Mask Group (2).png",
+      name: "Workman",
+      position: "Designer",
+    },
   ];
 
   useEffect(() => {
     dispatch(fetchCreditCardData({ id: 1 }));
     dispatch(fetchTransactions());
   }, [dispatch]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        cardsBtnRef.current &&
+        !cardsBtnRef.current.contains(event.target as Node)
+      ) {
+        setSelectedCard(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const [card] = cards;
   const recentTransactions = transactions.slice(0, 3);
@@ -255,72 +209,7 @@ export default function Dashboard() {
                 <h3>Weekly Activity</h3>
               </div>
               <div className={styles.activityBox}>
-                <ResponsiveContainer width="100%" height={250}>
-                  <BarChart data={barData}>
-                    <CartesianGrid
-                      vertical={false}
-                      strokeDasharray="0"
-                      strokeWidth={0.3}
-                    />
-                    <XAxis dataKey="day" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend
-                      verticalAlign="top"
-                      align="right"
-                      iconType="circle"
-                      content={({ payload }) => (
-                        <ul
-                          style={{
-                            listStyle: "none",
-                            margin: 0,
-                            padding: 0,
-                            display: "flex",
-                            justifyContent: "flex-end",
-                            gap: 24,
-                            marginBottom: "20px",
-                          }}
-                        >
-                          {payload?.map((entry) => (
-                            <li
-                              key={entry.value}
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                            >
-                              <span
-                                style={{
-                                  display: "inline-block",
-                                  width: 14,
-                                  height: 14,
-                                  borderRadius: "50%",
-                                  background: entry.color,
-                                  marginRight: 8,
-                                }}
-                              />
-                              <span style={{ fontWeight: 500 }}>
-                                {entry.value}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    />
-                    <Bar
-                      dataKey="Deposit"
-                      fill="#1814F3"
-                      barSize={14}
-                      radius={[8, 8, 8, 8]}
-                    />
-                    <Bar
-                      dataKey="Withdraw"
-                      fill="#16DBCC"
-                      barSize={14}
-                      radius={[8, 8, 8, 8]}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
+                <ActivityChart />
               </div>
             </div>
             <div className={styles.statistics}>
@@ -328,72 +217,35 @@ export default function Dashboard() {
                 <h3>Expense Statistics</h3>
               </div>
               <div className={styles.statisticsBox}>
-                <ResponsiveContainer width="100%" height={250}>
-                  <PieChart>
-                    <Pie
-                      data={expenseData}
-                      dataKey="value"
-                      nameKey="name"
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={125}
-                      innerRadius={0}
-                      paddingAngle={0}
-                      strokeWidth={8}
-                      label={renderCustomLabel}
-                      labelLine={false}
-                    >
-                      {expenseData.map((_, index) => (
-                        <Cell
-                          key={`cell-${index}`}
-                          fill={COLORS[index % COLORS.length]}
-                        />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
+                <ExpensesChart />
               </div>
             </div>
           </section>
 
           <section className={styles.transferBalance}>
-            <div className={styles.transfer}>
+            <form className={styles.transfer}>
               <div className={styles.transferTitle}>
                 <h3>Quick Transfer</h3>
               </div>
               <div className={styles.transferBox}>
-                <div className={styles.cardsBtn}>
-                  <div className={styles.transferCard}>
-                    <img
-                      className={styles.cardImg}
-                      src="src\assets\dashboard\Mask Group.png"
-                      alt="julia"
-                    />
-                    <div className={styles.cardName}>Livia Bator</div>
-                    <div className={styles.cardPosition}>CEO</div>
-                  </div>
-
-                  <div className={styles.transferCard}>
-                    <img
-                      className={styles.cardImg}
-                      src="src\assets\dashboard\Mask Group (1).png"
-                      alt="julia"
-                    />
-                    <div className={styles.cardName}>Randy Press</div>
-                    <div className={styles.cardPosition}>Director</div>
-                  </div>
-
-                  <div className={styles.transferCard}>
-                    <img
-                      className={styles.cardImg}
-                      src="src\assets\dashboard\Mask Group (2).png"
-                      alt="julia"
-                    />
-                    <div className={styles.cardName}>Workman</div>
-                    <div className={styles.cardPosition}>Designer</div>
-                  </div>
-
+                <div className={styles.cardsBtn} ref={cardsBtnRef}>
+                  {transferCards.map((card, idx) => (
+                    <div
+                      key={card.name}
+                      className={styles.transferCard}
+                      onClick={() => setSelectedCard(idx)}
+                    >
+                      <img
+                        className={`${styles.cardImg} ${
+                          selectedCard === idx ? styles.selectedTransferImg : ""
+                        }`}
+                        src={card.img}
+                        alt={card.name}
+                      />
+                      <div className={styles.cardName}>{card.name}</div>
+                      <div className={styles.cardPosition}>{card.position}</div>
+                    </div>
+                  ))}
                   <img
                     className={styles.chevronBtn}
                     src="src\assets\dashboard\Group 56.png"
@@ -403,32 +255,25 @@ export default function Dashboard() {
 
                 <div className={styles.amountBtn}>
                   <p>Write Amount</p>
-                  <img src="src\assets\dashboard\Group 311.png" alt="amount" />
+                  <button
+                    className={styles.amountBtnClickable}
+                    onClick={() => alert(`You have sent $525.50`)}
+                  >
+                    <img
+                      src="src\assets\dashboard\Group 311.png"
+                      alt="amount"
+                    />
+                  </button>
                 </div>
               </div>
-            </div>
+            </form>
 
             <div className={styles.balance}>
               <div className={styles.balanceTitle}>
                 <h3>Balance History</h3>
               </div>
               <div className={styles.balanceBox}>
-                <ResponsiveContainer width="100%" height={"100%"}>
-                  <AreaChart data={areaData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis domain={[0, 800]} tickCount={5} />
-                    <Tooltip />
-                    <Area
-                      type="monotone"
-                      dataKey="balance"
-                      stroke="#1814F3"
-                      strokeWidth={3}
-                      fill="#2D60FF"
-                      fillOpacity={0.2}
-                    />
-                  </AreaChart>
-                </ResponsiveContainer>
+                <AreaChartComponent />
               </div>
             </div>
           </section>
