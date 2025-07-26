@@ -1,6 +1,10 @@
 import styles from "../styles/Investments.module.css";
 
 export default function Investments() {
+  const getReturnClass = (value: string) => {
+    return value.startsWith("-") ? styles.negative : styles.positive;
+  };
+
   return (
     <main className={styles.main}>
       <section className={styles.performanceSection}>
@@ -37,7 +41,9 @@ export default function Investments() {
             />
             <div className={styles.statText}>
               <p className={styles.statLabel}>Rate of Return</p>
-              <h4 className={styles.statValue}>+5.80%</h4>
+              <h4 className={`${styles.statValue} ${getReturnClass("+5.80%")}`}>
+                +5.80%
+              </h4>
             </div>
           </div>
         </div>
@@ -86,7 +92,11 @@ export default function Investments() {
                 <p className={styles.amountLabel}>Investment Value</p>
               </div>
               <div className={styles.investmentReturn}>
-                <h4 className={styles.returnValue}>+16%</h4>
+                <h4
+                  className={`${styles.returnValue} ${getReturnClass("+16%")}`}
+                >
+                  +16%
+                </h4>
                 <p className={styles.returnLabel}>Return Value</p>
               </div>
             </div>
@@ -106,7 +116,11 @@ export default function Investments() {
                 <p className={styles.amountLabel}>Investment Value</p>
               </div>
               <div className={styles.investmentReturn}>
-                <h4 className={styles.returnValue}>-4%</h4>
+                <h4
+                  className={`${styles.returnValue} ${getReturnClass("-4%")}`}
+                >
+                  -4%
+                </h4>
                 <p className={styles.returnLabel}>Return Value</p>
               </div>
             </div>
@@ -126,7 +140,11 @@ export default function Investments() {
                 <p className={styles.amountLabel}>Investment Value</p>
               </div>
               <div className={styles.investmentReturn}>
-                <h4 className={styles.returnValue}>+25%</h4>
+                <h4
+                  className={`${styles.returnValue} ${getReturnClass("+25%")}`}
+                >
+                  +25%
+                </h4>
                 <p className={styles.returnLabel}>Return Value</p>
               </div>
             </div>
@@ -150,31 +168,51 @@ export default function Investments() {
                   <td className={styles.tableCell}>01</td>
                   <td className={styles.tableCell}>Trivago</td>
                   <td className={styles.tableCell}>$520</td>
-                  <td className={styles.tableCell}>+5%</td>
+                  <td
+                    className={`${styles.tableCell} ${getReturnClass("+5%")}`}
+                  >
+                    +5%
+                  </td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td className={styles.tableCell}>02</td>
                   <td className={styles.tableCell}>Canon</td>
                   <td className={styles.tableCell}>$480</td>
-                  <td className={styles.tableCell}>+10%</td>
+                  <td
+                    className={`${styles.tableCell} ${getReturnClass("+10%")}`}
+                  >
+                    +10%
+                  </td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td className={styles.tableCell}>03</td>
                   <td className={styles.tableCell}>Uber Food</td>
                   <td className={styles.tableCell}>$350</td>
-                  <td className={styles.tableCell}>-3%</td>
+                  <td
+                    className={`${styles.tableCell} ${getReturnClass("-3%")}`}
+                  >
+                    -3%
+                  </td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td className={styles.tableCell}>04</td>
                   <td className={styles.tableCell}>Nokia</td>
                   <td className={styles.tableCell}>$940</td>
-                  <td className={styles.tableCell}>+2%</td>
+                  <td
+                    className={`${styles.tableCell} ${getReturnClass("+2%")}`}
+                  >
+                    +2%
+                  </td>
                 </tr>
                 <tr className={styles.tableRow}>
                   <td className={styles.tableCell}>05</td>
                   <td className={styles.tableCell}>Tiktok</td>
                   <td className={styles.tableCell}>$670</td>
-                  <td className={styles.tableCell}>-12%</td>
+                  <td
+                    className={`${styles.tableCell} ${getReturnClass("-12%")}`}
+                  >
+                    -12%
+                  </td>
                 </tr>
               </tbody>
             </table>

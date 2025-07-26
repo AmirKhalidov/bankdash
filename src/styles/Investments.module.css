@@ -1,0 +1,199 @@
+.main {
+  padding: 40px;
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafe;
+  color: #333b69;
+}
+
+.performanceSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+
+.statsCards {
+  display: flex;
+  gap: 100px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  min-width: 300px;
+}
+
+.statImage {
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+}
+
+.statText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6e7485;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333b69;
+}
+
+.chartsSection {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.chartBlock {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.chartTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.chartImageWrapper {
+  text-align: center;
+}
+
+.chartImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.investmentsSection {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.myInvestments,
+.trendingStocks {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  flex: 1;
+  min-width: 340px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.investmentCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.investmentCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3f6fd;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 12px;
+}
+
+.investmentImage {
+  width: 48px;
+  height: 48px;
+}
+
+.investmentCompany {
+  flex: 1;
+}
+
+.companyName {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.companySector {
+  font-size: 12px;
+  color: #6e7485;
+}
+
+.investmentAmount,
+.investmentReturn {
+  text-align: right;
+}
+
+.amountValue,
+.returnValue {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.amountLabel,
+.returnLabel {
+  font-size: 12px;
+  color: #6e7485;
+}
+
+.stockTableWrapper {
+  overflow-x: auto;
+}
+
+.stockTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHead {
+  background-color: #f3f6fd;
+}
+
+.tableRow {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tableHeader {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333b69;
+}
+
+.tableBody .tableCell {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #4b5563;
+}
+.returnValue.positive,
+.tableCell.positive {
+  color: rgb(22, 219, 170);
+}
+
+.returnValue.negative,
+.tableCell.negative {
+  color: rgb(254, 92, 115);
+}
