@@ -1,23 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { fetchTransactions } from "./operations";
-
-export interface Transaction {
-  id: number;
-  userId: number;
-  description: string;
-  transactionDate: string;
-  amount: number;
-  type: string;
-  status: string;
-  icon: string;
-}
-
-export interface TransactionsState {
-  transactions: Transaction[];
-  loading: boolean;
-  error: string | null;
-}
+import type {
+  Transaction,
+  TransactionsState,
+} from "../types/transactionsSliceTypes";
 
 const initialState: TransactionsState = {
   transactions: [],
