@@ -1,0 +1,670 @@
+/* MAIN */
+main {
+  grid-column: 2;
+  background-color: rgb(245, 247, 250);
+  padding: 24px 40px;
+}
+
+/* CARDS_TRANSACTIONS */
+.cardsTransactions {
+  display: flex;
+  gap: 30px;
+}
+
+.myCards {
+  width: 730px;
+}
+
+.titlesMyCards {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.titlesSeeAll {
+  color: rgb(52, 60, 106);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 21px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  width: 350px;
+  border-radius: 25px 25px 0px 0px;
+  padding: 24px;
+}
+
+.row1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.balanceSum {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.row2 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.holderName {
+  margin-right: 67px;
+}
+
+.row3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 0px 0px 25px 25px;
+  background: linear-gradient(
+    135.29deg,
+    rgb(76, 73, 237) 2.349%,
+    rgb(10, 6, 244) 101.077%
+  );
+  width: 350px;
+}
+
+.balanceW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.sum {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.holder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.name {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.valid {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.date {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.cardSerial {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.chipCard {
+  width: 34px;
+  height: 34px;
+}
+
+.blue {
+  background: linear-gradient(
+    135.29deg,
+    rgb(76, 73, 237) 2.349%,
+    rgb(10, 6, 244) 101.077%
+  );
+}
+
+.sumW {
+  color: rgb(52, 60, 106);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.holderW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.nameW {
+  color: rgb(52, 60, 106);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.validW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.dateW {
+  color: rgb(52, 60, 106);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.cardSerialW {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.row3W {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 0px 0px 25px 25px;
+  background: rgb(255, 255, 255);
+  width: 350px;
+  border-top: 1px solid rgb(223, 234, 242);
+}
+
+.white {
+  background: rgb(255, 255, 255);
+}
+
+.transactions {
+  width: 350px;
+}
+
+.transactionsTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.transactionsList {
+  padding: 30px 24px;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transactionsRow {
+  display: flex;
+  align-items: center;
+}
+
+.transactionsRow > img {
+  margin-right: 17px;
+}
+
+.transTitleDate {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: auto;
+}
+
+.transTitle {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+.transDate {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.transSumMinus {
+  color: rgb(255, 75, 74);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.transSum {
+  color: rgb(65, 212, 168);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+/* activity__statistics */
+.activityStatistics {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.activity {
+  width: 730px;
+}
+
+.statistics {
+  width: 350px;
+}
+
+.activityTitle {
+  margin-bottom: 18px;
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.activityBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 322px;
+  padding: 0px 24px 0px 0px;
+}
+
+.statisticsTitle {
+  margin-bottom: 18px;
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.statisticsBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 322px;
+}
+
+.statChart {
+  width: 269px;
+  height: 259px;
+}
+
+/* transfer_balance  */
+.transferBalance {
+  display: flex;
+  gap: 30px;
+}
+
+.transfer {
+  width: 445px;
+}
+
+.balance {
+  width: 635px;
+}
+
+.transferTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.balanceTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.transferBox {
+  padding: 35px 0px 9px 35px;
+  background-color: #fff;
+  border-radius: 25px;
+  height: 276px;
+}
+
+.balanceBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 18px 0px 0px;
+  height: 276px;
+}
+
+.cardsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 29px;
+}
+
+.cardImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cardName {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.cardPosition {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.chevronBtn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.transferCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.amountBtn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 28px;
+}
+
+.amountBtn img {
+  cursor: pointer;
+}
+
+.selectedTransferImg {
+  box-shadow: 0 0 0 3px #1814f3;
+  border-radius: 50%;
+}
+
+.inputDiv {
+  width: 100%;
+}
+
+.amountInput {
+  background-color: #edf1f7;
+  width: 65%;
+  padding: 16px 0px 16px 32px;
+  border-radius: 50px;
+}
+
+.amountBtnClickable {
+  all: unset;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #fff;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  min-width: 300px;
+}
+
+.text {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: none;
+  background: #16dbcc;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.wrapper {
+  background-color: white;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 730px;
+  height: 340px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280; /* Серый */
+}
+
+.dashList {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.dashList li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  padding: 25px 36px;
+  border-radius: 25px;
+  width: 255px;
+}
+
+.main {
+  background-color: rgb(245, 247, 250);
+  padding: 24px 40px;
+  display: grid;
+  gap: 23px;
+}
+
+.dashList li p {
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.lastTransaction {
+  display: grid;
+}
+
+.lastTransaction ul {
+  display: grid;
+  gap: 10px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 25px;
+  width: 730px;
+}
+.oneTransaction {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.oneTransaction div {
+  width: 170px;
+}
+.oneTransaction h3 {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.oneTransaction div p {
+  width: 200px;
+}
+
+.oneTransaction p {
+  width: 100px;
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.container {
+  font-family: sans-serif;
+}
+
+/* .title {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #2e2e3a;
+} */
+
+.invoiceCard {
+  background: white;
+  border-radius: 25px;
+  padding: 16px;
+  width: 350px;
+
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+
+.item:last-child {
+  margin-bottom: 0px;
+}
+
+.iconWrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple {
+  background-color: #d0fdfa;
+  color: #00c7b2;
+}
+
+.michael {
+  background-color: #fff4d2;
+  color: #f2a900;
+}
+
+.playstation {
+  background-color: #eae9ff;
+  color: #5a55ff;
+}
+
+.william {
+  background-color: #ffdce3;
+  color: #ff3e6c;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.name {
+  color: rgb(177, 177, 177);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.time {
+  color: rgb(113, 142, 191);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.amount {
+  color: rgb(113, 142, 191);
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.margTitle {
+  margin-bottom: 20px;
+}

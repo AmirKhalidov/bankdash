@@ -1,0 +1,563 @@
+/* MAIN */
+
+main {
+  grid-column: 2;
+  background-color: rgb(245, 247, 250);
+  padding: 24px 40px;
+}
+
+/* CARDS_TRANSACTIONS */
+.cardsTransactions {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+.myCards {
+  width: 730px;
+}
+
+.titlesMyCards {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.titlesSeeAll {
+  color: rgb(52, 60, 106);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 21px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  width: 350px;
+  border-radius: 25px 25px 0px 0px;
+  padding: 24px;
+}
+
+.row1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.balanceSum {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.row2 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.holderName {
+  margin-right: 67px;
+}
+
+.row3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 0px 0px 25px 25px;
+  background: linear-gradient(
+    135.29deg,
+    rgb(76, 73, 237) 2.349%,
+    rgb(10, 6, 244) 101.077%
+  );
+  width: 350px;
+}
+
+.balanceW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.sum {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.holder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.name {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.valid {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.date {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.cardSerial {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.chipCard {
+  width: 34px;
+  height: 34px;
+}
+
+.blue {
+  background: linear-gradient(
+    135.29deg,
+    rgb(76, 73, 237) 2.349%,
+    rgb(10, 6, 244) 101.077%
+  );
+}
+
+.sumW {
+  color: rgb(52, 60, 106);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.holderW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.nameW {
+  color: rgb(52, 60, 106);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.validW {
+  color: rgb(113, 142, 191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 5px;
+}
+
+.dateW {
+  color: rgb(52, 60, 106);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.cardSerialW {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.row3W {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 0px 0px 25px 25px;
+  background: rgb(255, 255, 255);
+  width: 350px;
+  border-top: 1px solid rgb(223, 234, 242);
+}
+
+.white {
+  background: rgb(255, 255, 255);
+}
+
+.transactions {
+  width: 350px;
+}
+
+.transactionsTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.transactionsList {
+  padding: 30px 24px;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transactionsRow {
+  display: flex;
+  align-items: center;
+}
+
+.transactionsRow > img {
+  margin-right: 17px;
+}
+
+.transTitleDate {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: auto;
+}
+
+.transTitle {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  font-weight: 500;
+}
+
+.transDate {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.transSumMinus {
+  color: rgb(255, 75, 74);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+.transSum {
+  color: rgb(65, 212, 168);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+/* activity__statistics */
+.activityStatistics {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 24px;
+}
+
+.activity {
+  width: 730px;
+}
+
+.statistics {
+  width: 350px;
+}
+
+.activityTitle {
+  margin-bottom: 18px;
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.activityBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 322px;
+  padding: 0px 24px 0px 0px;
+}
+
+.statisticsTitle {
+  margin-bottom: 18px;
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.statisticsBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 322px;
+}
+
+.statChart {
+  width: 269px;
+  height: 259px;
+}
+
+/* transfer_balance  */
+.transferBalance {
+  display: flex;
+  gap: 30px;
+}
+
+.transfer {
+  width: 445px;
+}
+
+.balance {
+  width: 635px;
+}
+
+.transferTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.balanceTitle {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+.transferBox {
+  padding: 35px 0px 9px 35px;
+  background-color: #fff;
+  border-radius: 25px;
+  height: 276px;
+}
+
+.balanceBox {
+  background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 18px 0px 0px;
+  height: 276px;
+}
+
+.cardsBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 29px;
+}
+
+.cardImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.cardName {
+  color: rgb(35, 35, 35);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.cardPosition {
+  color: rgb(113, 142, 191);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.chevronBtn {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.transferCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.amountBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.amountBtn img {
+  cursor: pointer;
+}
+
+.transactionChart {
+  width: 350px;
+  height: 242px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + span {
+  border-bottom: 3px rgb(24, 20, 243) solid;
+}
+
+input[type="radio"] + span {
+  padding: 8px 11px;
+}
+
+.transactionsFilters {
+  display: flex;
+  gap: 60px;
+  border-bottom: 1px gray solid;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.resent {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+/* --------------- */
+
+.container {
+  font-family: sans-serif;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0px 30px;
+}
+
+.table th,
+.table td {
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.table thead {
+  color: #4a6fa1;
+}
+
+.arrow {
+  margin-right: 8px;
+  border: 2px solid rgb(113, 142, 191);
+  border-radius: 100%;
+  padding: 5px 9px;
+}
+
+.up {
+  color: rgb(113, 142, 191);
+}
+
+.down {
+  color: rgb(113, 142, 191);
+}
+
+.positive {
+  color: green;
+  /* font-weight: 600; */
+}
+
+.negative {
+  color: red;
+  /* font-weight: 600; */
+}
+
+.downloadBtn {
+  padding: 6px 12px;
+  border: 1px solid rgb(18, 50, 136);
+  background: none;
+  border-radius: 20px;
+  color: rgb(18, 50, 136);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.2s;
+}
+
+.downloadBtn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- */
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+
+.pageButton,
+.navButton {
+  border: none;
+  background: transparent;
+  color: blue;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover,
+.navButton:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: blue;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
