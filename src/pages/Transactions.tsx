@@ -46,9 +46,11 @@ export default function Transactions() {
   const [page, setPage] = useState(1);
 
   const dispatch = useDispatch<AppDispatch>();
+
   const { cards, loading } = useSelector(
     (state: RootState) => state.creditCards
   );
+
   const { transactions } = useSelector(
     (state: RootState) => state.transactions
   );
