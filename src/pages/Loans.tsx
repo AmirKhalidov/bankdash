@@ -4,7 +4,6 @@ import { fetchLoans, filterLoans, removeLoan } from "../services/loanSlice";
 import { type RootState, type AppDispatch } from "../services/store";
 import AppModal from "../components/AppModal";
 import styles from "../styles/Loans.module.css";
-import { MdMargin } from "react-icons/md";
 
 const Loans: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
