@@ -4,7 +4,13 @@ import { useAppDispatch, useAppSelector } from "../services/hooks";
 import { fetchServices } from "../redux/servicesSlice";
 import Modal from "../components/Modal";
 import styles from "../styles/Services.module.css";
+import type { RootState } from "../services/store";
 
+interface ServicesState {
+  bankServices: Service[];
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+}
 interface Service {
   id: string | number;
   icon: string;
@@ -25,9 +31,11 @@ interface Service {
 
 const Services: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { bankServices, status, error } = useAppSelector(
-    (state: any) => state.services
-  );
+  const {
+    bankServices = [],
+    status = "idle",
+    error = null,
+  } = useAppSelector((state: RootState) => state.services as ServicesState);
 
   const [selected, setSelected] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
