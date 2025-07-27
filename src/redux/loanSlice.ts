@@ -33,7 +33,10 @@ const loansSlice = createSlice({
   initialState,
   reducers: {
     filterLoans(state, action: PayloadAction<(loan: Loan) => boolean>) {
-      state.filteredLoans = state.loans.filter(action.payload);
+      state.filteredLoans = state.loans
+        .filter(action.payload)
+        .slice()
+        .sort((a, b) => a.loanMoney - b.loanMoney);
     },
     resetFilter(state) {
       state.filteredLoans = state.loans;
