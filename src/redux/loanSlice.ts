@@ -3,7 +3,7 @@ import {
   createSlice,
   type PayloadAction,
 } from "@reduxjs/toolkit";
-import { api } from "./api_service";
+import { api } from "../services/api_service";
 
 interface Loan {
   id: number;

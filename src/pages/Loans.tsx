@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLoans, filterLoans, removeLoan } from "../services/loanSlice";
+import { fetchLoans, filterLoans, removeLoan } from "../redux/loanSlice";
 import { type RootState, type AppDispatch } from "../services/store";
 import AppModal from "../components/AppModal";
 import styles from "../styles/Loans.module.css";

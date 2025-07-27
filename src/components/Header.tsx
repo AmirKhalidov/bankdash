@@ -1,9 +1,10 @@
 import styles from "../styles/Header.module.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
-import { IoNotificationsOutline } from "react-icons/io5";
 import avatar from "../assets/avatar.png";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
+import { logout } from "../services/firebase";
+import { CiLogout } from "react-icons/ci";
 
 const getPageTitle = (pathname: string): string => {
   const titleMap: Record<string, string> = {
@@ -33,15 +34,15 @@ export default function Header() {
           <IoSearchOutline className={styles.searchIcon} />
           <input type="text" placeholder="Search for something" name="search" />
         </div>
-        <button className={styles.navButton}>
+        <Link to="/settings" className={styles.navButton}>
           <IoSettingsOutline className={styles.iconNavSettings} />
+        </Link>
+        <button className={styles.navButton} onClick={logout}>
+          <CiLogout className={styles.iconNavNotification} />
         </button>
-        <button className={styles.navButton}>
-          <IoNotificationsOutline className={styles.iconNavNotification} />
-        </button>
-        <button className={styles.navButtonProfile}>
+        <Link to="/settings" className={styles.navButtonProfile}>
           <img src={avatar} alt="picture" className={styles.profilePic} />
-        </button>
+        </Link>
       </div>
     </header>
   );

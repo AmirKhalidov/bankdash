@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { useAppDispatch, useAppSelector } from "../services/hooks";
-import { fetchServices } from "../services/servicesSlice";
+import { fetchServices } from "../redux/servicesSlice";
 import Modal from "../components/Modal";
 import styles from "../styles/Services.module.css";
 

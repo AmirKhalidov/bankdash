@@ -1,10 +1,10 @@
 {
   "user": {
-    "id": 1,
-    "name": "Charlene Reed",
+    "name": "Charlene Reedd",
     "email": "charlene@example.com",
     "username": "charlenereed",
     "dob": "1990-01-25",
+    "password": "charlenereed",
     "address": {
       "permanent": "San Jose, California, USA",
       "present": "San Jose, California, USA",
@@ -12,7 +12,6 @@
       "postalCode": "45962",
       "country": "USA"
     },
-    "avatar": "/assets/avatar.png",
     "settings": {
       "currency": "USD",
       "timezone": "(GMT-12:00) International Date Line West",
@@ -23,7 +22,7 @@
       },
       "security": {
         "twoFactorAuth": true,
-        "currentPassword": "********",
+        "currentPassword": "charlenereed",
         "newPassword": ""
       }
     },

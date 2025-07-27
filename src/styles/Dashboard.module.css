@@ -247,6 +247,7 @@ main {
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
+  font-weight: 500;
 }
 
 .transDate {
@@ -300,6 +301,7 @@ main {
   justify-content: center;
   align-items: center;
   height: 322px;
+  padding: 0px 24px 0px 0px;
 }
 
 .statisticsTitle {
@@ -367,6 +369,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px 18px 0px 0px;
+  height: 276px;
 }
 
 .cardsBtn {
@@ -408,14 +412,74 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 7px;
+  cursor: pointer;
 }
 
 .amountBtn {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 28px;
 }
 
 .amountBtn img {
+  cursor: pointer;
+}
+
+.selectedTransferImg {
+  box-shadow: 0 0 0 3px #1814f3;
+  border-radius: 50%;
+}
+
+.inputDiv {
+  width: 100%;
+}
+
+.amountInput {
+  background-color: #edf1f7;
+  width: 65%;
+  padding: 16px 0px 16px 32px;
+  border-radius: 50px;
+}
+
+.amountBtnClickable {
+  all: unset;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #fff;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  min-width: 300px;
+}
+
+.text {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: none;
+  background: #16dbcc;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import servicesReducer from "./servicesSlice";
-import loansReducer from "./loanSlice";
+import servicesReducer from "../redux/servicesSlice";
+import loansReducer from "../redux/loanSlice";
 
 export const store = configureStore({
   reducer: {
