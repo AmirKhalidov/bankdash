@@ -67,6 +67,7 @@ export default function Transactions() {
           return true;
       }
     })
+    // @ts-ignore
     .filter((transaction, i, arr) => {
       if (arr.length > 5) {
         if (page === 1) {
@@ -79,8 +80,6 @@ export default function Transactions() {
         return true;
       }
     });
-
-  console.log(filteredTransactions);
 
   useEffect(() => {
     dispatch(fetchCreditCardData({ id: 1 }));
@@ -181,24 +180,29 @@ export default function Transactions() {
                 </div>
               </div>
             </div>
-            <div className={styles.transactionChart}>
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data} barSize={30}>
-                  <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                  <YAxis hide />
-                  <Tooltip
-                    formatter={(value: number) => `$${value.toLocaleString()}`}
-                  />
-                  <Bar dataKey="value" shape={<RoundedBar />}>
-                    {data.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={entry.name === "Dec" ? "#00CFC3" : "#E8ECF4"}
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+            <div>
+              <h3 className={styles.titlesMyCards}>My Expense</h3>
+              <div className={styles.transactionChart}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={data} barSize={30}>
+                    <XAxis dataKey="name" axisLine={false} tickLine={false} />
+                    <YAxis hide />
+                    <Tooltip
+                      formatter={(value: number) =>
+                        `$${value.toLocaleString()}`
+                      }
+                    />
+                    <Bar dataKey="value" shape={<RoundedBar />}>
+                      {data.map((entry, index) => (
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={entry.name === "Dec" ? "#00CFC3" : "#E8ECF4"}
+                        />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </section>
           <section>
@@ -303,7 +307,7 @@ export default function Transactions() {
                   })}
                 </tbody>
               </table>
-              {filteredTransactions.length >= 5 && (
+              {(filteredTransactions.length >= 5 || page === 2) && (
                 <div className={styles.pagination}>
                   <button
                     onClick={() => {
