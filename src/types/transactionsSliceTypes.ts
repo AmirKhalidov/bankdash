@@ -7,6 +7,7 @@ export interface Transaction {
   type: string;
   status: string;
   icon: string;
+  card: string;
 }
 
 export interface TransactionsState {

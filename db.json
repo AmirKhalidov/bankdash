@@ -68,7 +68,8 @@
       "amount": -850,
       "type": "Investment",
       "status": "pending",
-      "icon": "card"
+      "icon": "card",
+      "card": "7511 ****"
     },
     {
       "id": "2",
@@ -78,7 +79,8 @@
       "amount": 2500,
       "type": "paypal",
       "status": "completed",
-      "icon": "paypal"
+      "icon": "paypal",
+      "card": "1234 ****"
     },
     {
       "id": "3",
@@ -88,7 +90,8 @@
       "amount": 5400,
       "type": "transfer",
       "status": "completed",
-      "icon": "user"
+      "icon": "user",
+      "card": "5677 ****"
     },
     {
       "id": "4",
@@ -98,7 +101,8 @@
       "amount": -4000,
       "type": "Others",
       "status": "pending",
-      "icon": "shopping"
+      "icon": "shopping",
+      "card": "4632 ****"
     },
     {
       "id": "5",
@@ -108,17 +112,19 @@
       "amount": -500,
       "type": "Bill Expense",
       "status": "completed",
-      "icon": "transfer"
+      "icon": "transfer",
+      "card": "0654 ****"
     },
     {
       "id": "6",
       "userId": 1,
       "description": "Movie Tickets",
       "transactionDate": "01 February 2021",
-      "amount": -720,
+      "amount": 720,
       "type": "Entertainment",
       "status": "completed",
-      "icon": "entertainment"
+      "icon": "entertainment",
+      "card": "2534 ****"
     },
     {
       "id": "7",
@@ -128,7 +134,8 @@
       "amount": -2500,
       "type": "Entertainment",
       "status": "completed",
-      "icon": "entertainment"
+      "icon": "entertainment",
+      "card": "7543 ****"
     },
     {
       "id": "8",
@@ -138,7 +145,8 @@
       "amount": -1190,
       "type": "Bill Expense",
       "status": "completed",
-      "icon": "bill"
+      "icon": "bill",
+      "card": "1124 ****"
     },
     {
       "id": "9",
@@ -148,7 +156,8 @@
       "amount": -1200,
       "type": "Investment",
       "status": "completed",
-      "icon": "investment"
+      "icon": "investment",
+      "card": "8654 ****"
     },
     {
       "id": "10",
@@ -158,7 +167,8 @@
       "amount": -150,
       "type": "Others",
       "status": "completed",
-      "icon": "shopping"
+      "icon": "shopping",
+      "card": "4521 ****"
     }
   ],
   "accounts": [
@@ -272,11 +282,7 @@
       "icon": "shield",
       "status": "active",
       "monthlyFee": 50,
-      "benefits": [
-        "24/7 Support",
-        "Worldwide Coverage",
-        "Emergency Assistance"
-      ]
+      "benefits": ["24/7 Support", "Worldwide Coverage", "Emergency Assistance"]
     },
     {
       "id": "2",
@@ -286,11 +292,7 @@
       "icon": "shopping",
       "status": "active",
       "monthlyFee": 0,
-      "benefits": [
-        "Cashback Rewards",
-        "Price Protection",
-        "Purchase Insurance"
-      ]
+      "benefits": ["Cashback Rewards", "Price Protection", "Purchase Insurance"]
     },
     {
       "id": "3",
@@ -314,11 +316,7 @@
       "icon": "investment",
       "status": "active",
       "monthlyFee": 15,
-      "benefits": [
-        "Expert Advice",
-        "Portfolio Management",
-        "Market Analysis"
-      ]
+      "benefits": ["Expert Advice", "Portfolio Management", "Market Analysis"]
     }
   ]
 }

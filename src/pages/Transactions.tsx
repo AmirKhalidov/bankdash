@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "../redux/store";
 import styles from "../styles/Transactions.module.css";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import { fetchCreditCardData, fetchTransactions } from "../redux/operations";
 import Spinner from "../components/Spinner";
 import { Link } from "react-router";
@@ -42,6 +42,9 @@ const RoundedBar = (props: any) => {
 };
 
 export default function Transactions() {
+  const [radio, setRadio] = useState("allTransactions");
+  const [page, setPage] = useState(1);
+
   const dispatch = useDispatch<AppDispatch>();
   const { cards, loading } = useSelector(
     (state: RootState) => state.creditCards
@@ -50,12 +53,46 @@ export default function Transactions() {
     (state: RootState) => state.transactions
   );
 
+  const filteredTransactions = transactions
+    .filter((transaction) => {
+      switch (radio) {
+        case "allTransactions":
+          return true;
+        case "income":
+          return transaction.amount > 0;
+        case "expense":
+          return transaction.amount < 0;
+
+        default:
+          return true;
+      }
+    })
+    .filter((transaction, i, arr) => {
+      if (arr.length > 5) {
+        if (page === 1) {
+          return i < 5;
+        }
+        if (page === 2) {
+          return i >= 5;
+        }
+      } else {
+        return true;
+      }
+    });
+
+  console.log(filteredTransactions);
+
   useEffect(() => {
     dispatch(fetchCreditCardData({ id: 1 }));
     dispatch(fetchTransactions());
   }, [dispatch]);
 
   const [card] = cards;
+
+  const handleRadio = (e: ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    setRadio(target.value);
+  };
 
   return (
     <>
@@ -162,6 +199,154 @@ export default function Transactions() {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
+            </div>
+          </section>
+          <section>
+            <h3 className={styles.resent}>Recent Transactions</h3>
+            <ul className={styles.transactionsFilters}>
+              <li>
+                <label>
+                  <input
+                    onChange={handleRadio}
+                    type="radio"
+                    name="transactions"
+                    value="allTransactions"
+                    checked={radio === "allTransactions"}
+                  />
+                  <span>All Transactions</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    onChange={handleRadio}
+                    type="radio"
+                    name="transactions"
+                    value="income"
+                    checked={radio === "income"}
+                  />
+                  <span>Income</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    onChange={handleRadio}
+                    type="radio"
+                    name="transactions"
+                    value="expense"
+                    checked={radio === "expense"}
+                  />
+                  <span>Expense</span>
+                </label>
+              </li>
+            </ul>
+            <div className={styles.container}>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Transaction ID</th>
+                    <th>Type</th>
+                    <th>Card</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredTransactions.map((transaction, i) => {
+                    const transactionInfo = JSON.stringify(transaction);
+
+                    const blob = new Blob([transactionInfo], {
+                      type: "text/plain",
+                    });
+                    const url = URL.createObjectURL(blob);
+                    return (
+                      <tr key={i}>
+                        <td>
+                          <span
+                            className={`${styles.arrow} ${
+                              transaction.amount > 0 ? styles.down : styles.up
+                            }`}
+                          >
+                            {transaction.amount > 0 ? "↓" : "↑"}
+                          </span>
+                          {transaction.description}
+                        </td>
+                        <td>#{transaction.id}</td>
+                        <td>{transaction.type}</td>
+                        <td>{transaction.card}</td>
+                        <td>{transaction.transactionDate}</td>
+                        <td
+                          className={
+                            transaction.amount > 0
+                              ? styles.positive
+                              : styles.negative
+                          }
+                        >
+                          {transaction.amount > 0
+                            ? `+$${transaction.amount}`
+                            : `-$${Math.abs(transaction.amount)}`}
+                        </td>
+                        <td>
+                          <a
+                            href={url}
+                            download="Transaction Info"
+                            className={styles.downloadBtn}
+                          >
+                            Download
+                          </a>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+              {filteredTransactions.length >= 5 && (
+                <div className={styles.pagination}>
+                  <button
+                    onClick={() => {
+                      setPage(1);
+                    }}
+                    className={styles.navButton}
+                    disabled={page === 1}
+                  >
+                    &lt; Previous
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setPage(1);
+                    }}
+                    className={`${styles.pageButton} ${
+                      page === 1 ? styles.active : ""
+                    }`}
+                  >
+                    1
+                  </button>
+                  <button
+                    onClick={() => {
+                      setPage(2);
+                    }}
+                    className={`${styles.pageButton} ${
+                      page === 2 ? styles.active : ""
+                    }`}
+                  >
+                    2
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setPage(2);
+                    }}
+                    className={styles.navButton}
+                    disabled={page === 2}
+                  >
+                    Next &gt;
+                  </button>
+                </div>
+              )}
             </div>
           </section>
         </main>

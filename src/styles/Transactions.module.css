@@ -1,4 +1,5 @@
 /* MAIN */
+
 main {
   grid-column: 2;
   background-color: rgb(245, 247, 250);
@@ -426,10 +427,136 @@ main {
 }
 
 .transactionChart {
-  width: 100%;
-  max-width: 400px;
+  width: 350px;
   height: 250px;
   background: white;
   border-radius: 20px;
   padding: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + span {
+  border-bottom: 3px rgb(24, 20, 243) solid;
+}
+
+input[type="radio"] + span {
+  padding: 8px 11px;
+}
+
+.transactionsFilters {
+  display: flex;
+  gap: 60px;
+  border-bottom: 1px gray solid;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.resent {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+/* --------------- */
+
+.container {
+  font-family: sans-serif;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0px 30px;
+}
+
+.table th,
+.table td {
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.table thead {
+  color: #4a6fa1;
+}
+
+.arrow {
+  margin-right: 8px;
+  border: 2px solid rgb(113, 142, 191);
+  border-radius: 100%;
+  padding: 5px 9px;
+}
+
+.up {
+  color: rgb(113, 142, 191);
+}
+
+.down {
+  color: rgb(113, 142, 191);
+}
+
+.positive {
+  color: green;
+  /* font-weight: 600; */
+}
+
+.negative {
+  color: red;
+  /* font-weight: 600; */
+}
+
+.downloadBtn {
+  padding: 6px 12px;
+  border: 1px solid rgb(18, 50, 136);
+  background: none;
+  border-radius: 20px;
+  color: rgb(18, 50, 136);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.2s;
+}
+
+.downloadBtn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- */
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+
+.pageButton,
+.navButton {
+  border: none;
+  background: transparent;
+  color: blue;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover,
+.navButton:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: blue;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
 }
