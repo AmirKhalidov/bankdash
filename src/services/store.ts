@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import servicesReducer from "./servicesSlice";
+import loansReducer from "./loanSlice";
 
 export const store = configureStore({
   reducer: {
     services: servicesReducer,
+    loans: loansReducer,
   },
 });
 

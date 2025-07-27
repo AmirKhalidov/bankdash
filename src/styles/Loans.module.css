@@ -1,0 +1,96 @@
+.filtersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filterCard {
+  flex: 1;
+  width: 180px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.filterCard:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.iconContainer {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.filterTitle {
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.filterSubtitle {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.table th {
+  color: #718ebf;
+  line-height: 100%;
+}
+
+button {
+  border: 1px solid rgb(113, 142, 191);
+  color: rgb(113, 142, 191);
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #1814f3;
+}
+
+button:focus {
+  outline: none;
+}

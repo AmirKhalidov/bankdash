@@ -6,7 +6,7 @@ const API_URL = "http://localhost:3001/user";
 export const fetchServices = createAsyncThunk(
   "services/fetchServices",
   async () => {
-    const response = await axios.get("http://localhost:3001/user");
+    const response = await axios.get(API_URL);
     return response.data.bankServices;
   }
 );
