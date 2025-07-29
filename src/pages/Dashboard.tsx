@@ -7,6 +7,7 @@ import { fetchCreditCardData, fetchTransactions } from "../redux/operations";
 import ExpensesChart from "../components/ExpensesChart";
 import ActivityChart from "../components/ActivityChart";
 import AreaChartComponent from "../components/AreaChartComponent";
+import { Link } from "react-router";
 
 export default function Dashboard() {
   const [showModal, setShowModal] = useState(false);
@@ -86,7 +87,9 @@ export default function Dashboard() {
             <div className={styles.myCards}>
               <div className={styles.titles}>
                 <h3 className={styles.titlesMyCards}>My Cards</h3>
-                <a className={styles.titlesSeeAll}>See All</a>
+                <Link to="/credit-cards" className={styles.titlesSeeAll}>
+                  See All
+                </Link>
               </div>
 
               <div className={styles.cards}>

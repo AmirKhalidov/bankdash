@@ -98,7 +98,7 @@ export default function Accounts() {
             <li key={i}>
               <img src={data.img} />
               <div>
-                <p>{data.title}</p>
+                <p className={styles.mb6}>{data.title}</p>
                 <h3>{data.value}</h3>
               </div>
             </li>
@@ -114,7 +114,7 @@ export default function Accounts() {
               <li className={styles.oneTransaction} key={i}>
                 <img src={images[i]} />
                 <div>
-                  <h3>{transaction.description}</h3>
+                  <h3 className={styles.mb5}>{transaction.description}</h3>
                   <p>{transaction.transactionDate}</p>
                 </div>
                 <p>{transaction.type}</p>
@@ -185,7 +185,9 @@ export default function Accounts() {
           </h3>
           <div className={styles.wrapper}>
             <p className={styles.subtitle}>
-              $7,560 Debited & $5,420 Credited in this Week
+              <span className={styles.spanHighlight}>$7,560</span> Debited &{" "}
+              <span className={styles.spanHighlight}>$5,420</span> Credited in
+              this Week
             </p>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={chartData} barCategoryGap="20%">

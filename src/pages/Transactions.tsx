@@ -25,7 +25,9 @@ const data = [
   { name: "Jan", value: 7500 },
 ];
 
-const RoundedBar = (props: any) => {
+import type { BarProps } from "recharts";
+
+const RoundedBar = (props: BarProps) => {
   const { x, y, width, height, fill } = props;
   const radius = 10;
   return (
@@ -42,8 +44,8 @@ const RoundedBar = (props: any) => {
 };
 
 export default function Transactions() {
-  const [radio, setRadio] = useState("allTransactions");
-  const [page, setPage] = useState(1);
+  const [radio, setRadio] = useState<string>("allTransactions");
+  const [page, setPage] = useState<number>(1);
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -69,8 +71,7 @@ export default function Transactions() {
           return true;
       }
     })
-    // @ts-ignore
-    .filter((transaction, i, arr) => {
+    .filter((_, i, arr) => {
       if (arr.length > 5) {
         if (page === 1) {
           return i < 5;
@@ -194,7 +195,10 @@ export default function Transactions() {
                         `$${value.toLocaleString()}`
                       }
                     />
-                    <Bar dataKey="value" shape={<RoundedBar />}>
+                    <Bar
+                      dataKey="value"
+                      shape={(props: BarProps) => <RoundedBar {...props} />}
+                    >
                       {data.map((entry, index) => (
                         <Cell
                           key={`cell-${index}`}
@@ -210,8 +214,12 @@ export default function Transactions() {
           <section>
             <h3 className={styles.resent}>Recent Transactions</h3>
             <ul className={styles.transactionsFilters}>
-              <li>
-                <label>
+              <li
+                className={
+                  radio === "allTransactions" ? styles.activeFilter : ""
+                }
+              >
+                <label className={styles.listItem}>
                   <input
                     onChange={handleRadio}
                     type="radio"
@@ -222,8 +230,8 @@ export default function Transactions() {
                   <span>All Transactions</span>
                 </label>
               </li>
-              <li>
-                <label>
+              <li className={radio === "income" ? styles.activeFilter : ""}>
+                <label className={styles.listItem}>
                   <input
                     onChange={handleRadio}
                     type="radio"
@@ -234,8 +242,8 @@ export default function Transactions() {
                   <span>Income</span>
                 </label>
               </li>
-              <li>
-                <label>
+              <li className={radio === "expense" ? styles.activeFilter : ""}>
+                <label className={styles.listItem}>
                   <input
                     onChange={handleRadio}
                     type="radio"

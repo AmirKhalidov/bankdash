@@ -501,6 +501,7 @@ main {
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  color: #232323;
 }
 
 .dashList li {
@@ -667,4 +668,16 @@ main {
 
 .margTitle {
   margin-bottom: 20px;
+}
+
+.mb6 {
+  margin-bottom: 6px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.spanHighlight {
+  color: #333b69;
 }

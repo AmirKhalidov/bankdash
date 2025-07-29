@@ -450,13 +450,13 @@ input[type="radio"] + span {
 .transactionsFilters {
   display: flex;
   gap: 60px;
-  border-bottom: 1px gray solid;
+  border-bottom: 1px #ebeef2 solid;
   padding: 10px 0;
   margin-bottom: 20px;
 }
 
 .resent {
-  color: rgb(52, 60, 106);
+  color: #343c6a;
   font-size: 22px;
   font-weight: 600;
   line-height: 27px;
@@ -481,7 +481,7 @@ input[type="radio"] + span {
 .table td {
   padding: 12px 0;
   text-align: left;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #f2f4f7;
 }
 
 .table thead {
@@ -560,4 +560,12 @@ input[type="radio"] + span {
   color: white;
   padding: 6px 12px;
   border-radius: 10px;
+}
+
+.listItem {
+  cursor: pointer;
+}
+
+.activeFilter {
+  color: #1814f3;
 }
