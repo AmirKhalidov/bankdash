@@ -1,10 +1,10 @@
 {
   "user": {
-    "id": 1,
-    "name": "Charlene Reed",
+    "name": "Charlene Reedd",
     "email": "charlene@example.com",
     "username": "charlenereed",
     "dob": "1990-01-25",
+    "password": "charlenereed",
     "address": {
       "permanent": "San Jose, California, USA",
       "present": "San Jose, California, USA",
@@ -12,7 +12,6 @@
       "postalCode": "45962",
       "country": "USA"
     },
-    "avatar": "/assets/avatar.png",
     "settings": {
       "currency": "USD",
       "timezone": "(GMT-12:00) International Date Line West",
@@ -23,98 +22,158 @@
       },
       "security": {
         "twoFactorAuth": true,
-        "currentPassword": "********",
+        "currentPassword": "charlenereed",
         "newPassword": ""
       }
     }
   },
   "cards": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "cardNumber": "3778 **** **** 1234",
       "cardType": "visa",
       "cardHolder": "Eddy Cusuma",
       "validThru": "12/22",
-      "balance": 5756.00,
+      "balance": 5756,
       "theme": "dark"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "cardNumber": "3778 **** **** 1234",
       "cardType": "mastercard",
       "cardHolder": "Eddy Cusuma",
       "validThru": "12/22",
-      "balance": 5756.00,
+      "balance": 5756,
       "theme": "light"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "cardNumber": "3778 **** **** 1234",
       "cardType": "visa",
       "cardHolder": "Eddy Cusuma",
       "validThru": "12/22",
-      "balance": 5756.00,
+      "balance": 5756,
       "theme": "blue"
     }
   ],
   "transactions": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "description": "Deposit from my Card",
       "transactionDate": "28 January 2021",
       "amount": -850,
-      "type": "card",
+      "type": "Investment",
       "status": "pending",
-      "icon": "card"
+      "icon": "card",
+      "card": "7511 ****"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "description": "Deposit Paypal",
       "transactionDate": "25 January 2021",
       "amount": 2500,
       "type": "paypal",
       "status": "completed",
-      "icon": "paypal"
+      "icon": "paypal",
+      "card": "1234 ****"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "description": "Jemi Wilson",
       "transactionDate": "21 January 2021",
       "amount": 5400,
       "type": "transfer",
       "status": "completed",
-      "icon": "user"
+      "icon": "user",
+      "card": "5677 ****"
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 1,
       "description": "Shopping",
       "transactionDate": "28 January 2021",
       "amount": -4000,
-      "type": "shopping",
+      "type": "Others",
       "status": "pending",
-      "icon": "shopping"
+      "icon": "shopping",
+      "card": "4632 ****"
     },
     {
-      "id": 5,
+      "id": "5",
       "userId": 1,
       "description": "Transfer",
       "transactionDate": "25 January 2021",
-      "amount": -200,
-      "type": "transfer",
+      "amount": -500,
+      "type": "Bill Expense",
       "status": "completed",
-      "icon": "transfer"
+      "icon": "transfer",
+      "card": "0654 ****"
+    },
+    {
+      "id": "6",
+      "userId": 1,
+      "description": "Movie Tickets",
+      "transactionDate": "01 February 2021",
+      "amount": 720,
+      "type": "Entertainment",
+      "status": "completed",
+      "icon": "entertainment",
+      "card": "2534 ****"
+    },
+    {
+      "id": "7",
+      "userId": 1,
+      "description": "Concert",
+      "transactionDate": "03 February 2021",
+      "amount": -2500,
+      "type": "Entertainment",
+      "status": "completed",
+      "icon": "entertainment",
+      "card": "7543 ****"
+    },
+    {
+      "id": "8",
+      "userId": 1,
+      "description": "Electricity Bill",
+      "transactionDate": "05 February 2021",
+      "amount": -1190,
+      "type": "Bill Expense",
+      "status": "completed",
+      "icon": "bill",
+      "card": "1124 ****"
+    },
+    {
+      "id": "9",
+      "userId": 1,
+      "description": "Stock Purchase",
+      "transactionDate": "07 February 2021",
+      "amount": -1200,
+      "type": "Investment",
+      "status": "completed",
+      "icon": "investment",
+      "card": "8654 ****"
+    },
+    {
+      "id": "10",
+      "userId": 1,
+      "description": "Groceries",
+      "transactionDate": "09 February 2021",
+      "amount": -150,
+      "type": "Others",
+      "status": "completed",
+      "icon": "shopping",
+      "card": "4521 ****"
     }
   ],
   "accounts": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "accountType": "Checking",
       "bankName": "DBL Bank",
@@ -123,7 +182,7 @@
       "status": "active"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "accountType": "Savings",
       "bankName": "BRC Bank",
@@ -132,7 +191,7 @@
       "status": "active"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "accountType": "Investment",
       "bankName": "ABM Bank",
@@ -143,7 +202,7 @@
   ],
   "investments": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "company": "Apple Store",
       "symbol": "AAPL",
@@ -153,7 +212,7 @@
       "icon": "apple"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "company": "Samsung Mobile",
       "symbol": "SMSN",
@@ -163,7 +222,7 @@
       "icon": "samsung"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "company": "Tesla Motors",
       "symbol": "TSLA",
@@ -175,7 +234,7 @@
   ],
   "loans": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "loanType": "Personal Loan",
       "amount": 8500,
@@ -188,7 +247,7 @@
       "endDate": "2024-09-15"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "loanType": "Corporate Loan",
       "amount": 12500,
@@ -201,12 +260,12 @@
       "endDate": "2025-02-01"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "loanType": "Business Loan",
       "amount": 15000,
       "totalRepayment": 65000,
-      "interestRate": 5.0,
+      "interestRate": 5,
       "duration": "18 Months",
       "monthlyPayment": 4200,
       "status": "pending",
@@ -216,7 +275,7 @@
   ],
   "services": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "serviceName": "Life Insurance",
       "description": "Unlimited protection",
@@ -226,7 +285,7 @@
       "benefits": ["24/7 Support", "Worldwide Coverage", "Emergency Assistance"]
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "serviceName": "Shopping",
       "description": "Buy. Think. Grow.",
@@ -236,17 +295,21 @@
       "benefits": ["Cashback Rewards", "Price Protection", "Purchase Insurance"]
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 1,
       "serviceName": "Safety",
       "description": "We are your allies",
       "icon": "safety",
       "status": "inactive",
       "monthlyFee": 25,
-      "benefits": ["Fraud Protection", "Identity Monitoring", "Secure Transactions"]
+      "benefits": [
+        "Fraud Protection",
+        "Identity Monitoring",
+        "Secure Transactions"
+      ]
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 1,
       "serviceName": "Investment",
       "description": "Grow your wealth",

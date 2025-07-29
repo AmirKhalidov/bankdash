@@ -1,4 +1,4 @@
-/* --- Основной контейнер --- */
+/*  Основной контейнер  */
 .mainContent {
   max-width: 1200px;
   margin: 0 auto;
@@ -11,20 +11,34 @@
   gap: 48px;
 }
 
-/* --- Секция с карточками --- */
+/*  Секция с карточками  */
 .cardsSection {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 }
 
-.sectionTitle,
-.sectionSubtitle {
-  font-size: 20px;
+.sectionTitle {
+  padding-left: 50px;
+  margin-bottom: 15px;
+  color: rgb(51, 59, 105);
+  font-family: Inter;
+  font-size: 22px;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 16px;
-  margin-top: 24px;
+  line-height: 27px;
+  text-align: left;
 }
+
+.sectionSubtitle {
+  margin-bottom: 20px;
+  color: rgb(51, 59, 105);
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: left;
+}
+
 .sectionWrapper {
   background-color: #fff;
   padding: 24px;
@@ -32,6 +46,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   margin-top: 0;
 }
+
 .sectionStats {
   margin-bottom: 18px;
   color: rgb(52, 60, 106);
@@ -40,36 +55,38 @@
   line-height: 27px;
 }
 
-.statsChart {
-  background-color: #fff;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 322px;
-}
-
-/* --- Контейнер карточек с горизонтальным скроллом и gap 30px --- */
+/*  Контейнер карточек  */
 .cardsContainer {
   display: flex;
   gap: 30px;
-  padding: 0 40px; /* отступы слева и справа */
+  padding: 0 40px;
   overflow-x: auto;
   flex-wrap: nowrap;
   scrollbar-width: thin;
   justify-content: center;
 }
 
-/* --- Обертка каждой карточки --- */
+/*  Обертка каждой карточки  */
 .cardWrapper {
-  flex: 0 0 320px; /* фиксированная ширина */
-  display: flex;
-  flex-direction: column;
-  background: transparent;
+  flex: 0 0 320px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: transparent;
+  padding: 0;
 }
 
-/* --- Карточка --- */
+.cardWrapper:hover,
+.cardWrapper:focus {
+  transform: scale(1.03);
+  outline: none;
+}
+
+/*  Карточка  */
 .card {
+  padding-bottom: 20px;
+  position: relative;
+  width: 100%;
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
@@ -81,30 +98,26 @@
   color: #fff;
 }
 
-/* Голубой градиент */
 .cardBlue {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
+
 .cardDarkBlue {
-  border-radius: 25px;
-  background: linear-gradient(
-    135.29deg,
-    rgb(76, 73, 237) 2.413%,
-    rgb(10, 6, 244) 101.106%
-  );
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
 }
-/* Белая карта */
+
 .cardWhite {
   background: #fff;
   color: #111827;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
 }
 
-/* --- Хедер карты: баланс и чип --- */
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .balanceInfo {
@@ -113,17 +126,16 @@
   gap: 4px;
 }
 
-.balanceLabel,
-.balanceLabelWhite {
-  font-weight: 500;
+.balanceLabel {
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.7;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
-.balanceValue,
-.balanceValueWhite {
-  font-weight: 700;
+.balanceValue {
   font-size: 24px;
+  font-weight: 700;
 }
 
 .chipIcon {
@@ -131,13 +143,15 @@
   height: auto;
 }
 
-/* --- Тело карты: держатель и дата --- */
+/*  Тело карты  */
 .cardBody {
   display: flex;
   justify-content: space-between;
   margin-top: 24px;
+  padding-bottom: 60px;
   gap: 16px;
   flex-wrap: nowrap;
+  font-size: 12px;
 }
 
 .cardHolder,
@@ -149,59 +163,160 @@
 }
 
 .holderLabel,
-.holderLabelWhite,
-.validLabel,
-.validLabelWhite {
+.validLabel {
   font-size: 12px;
   opacity: 0.7;
   font-weight: 500;
+  margin-bottom: 4px;
 }
 
 .holderName,
-.holderNameWhite,
-.validDate,
-.validDateWhite {
+.validDate {
   font-weight: 600;
   font-size: 16px;
   margin-top: 4px;
 }
 
-.holderName,
-.holderNameWhite {
-  margin-right: 0;
+/* Поле для редактирования имени держателя */
+input[type="text"] {
+  font-size: 16px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* --- Нижняя часть карточки: номер и логотип банка --- */
-.cardFooter,
-.cardFooterWhite {
+/*  Подвал карты  */
+.cardFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 12px;
+  font-size: 14px;
   font-weight: 600;
-  font-size: 16px;
-  color: inherit;
+  color: #555;
+}
+.cardFooterInner {
+  display: flex;
+  gap: 100px;
 }
 
 .bankLogo {
-  width: 70px;
+  width: 40px;
   height: auto;
 }
 
-/* --- Секция статистики --- */
+/*  Кнопки редактирования  */
+.cardWrapper > div > button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(24, 20, 243);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cardWrapper > div > button:hover {
+  background-color: #2563eb;
+}
+
+/*  Notification  */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  font-weight: 600;
+  user-select: none;
+  animation: fadeOut 3s ease forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*  Modal Styles  */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 720px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modalContent h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modalContent p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.modalContent button {
+  padding: 8px 16px;
+  margin-right: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modalContent button:hover {
+  background-color: #ddd;
+}
+
+.modalContent button:first-of-type {
+  background-color: #f44336;
+  color: white;
+}
+
+.modalContent button:first-of-type:hover {
+  background-color: #d32f2f;
+}
+
+/*  Секция статистики  */
 .statisticsSection {
   display: flex;
   flex-direction: row;
   gap: 32px;
+  margin-top: 40px;
+  padding: 0px 50px;
 }
 
-.sectionSubtitle {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #111827;
-}
-
-/* --- Список карт  --- */
+/*  Список карт  */
 .cardListSection {
   height: 357px;
   display: flex;
@@ -215,13 +330,6 @@
   height: 90px;
   background-color: #fff;
   border-radius: 25px;
-  display: flex;
-  gap: 40px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cardItem {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -279,14 +387,24 @@
   background: #2563eb;
 }
 
-/* --- Секция управления картами --- */
+/*  Секция управления картами  */
 .cardManagementSection {
   display: flex;
   gap: 30px;
-  /* flex-wrap: wrap; */
+  margin-top: 40px;
+  padding: 0px 50px;
 }
-
-/* --- Добавление карты --- */
+h2,
+h3 {
+  color: rgb(51, 59, 105);
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+/*  Добавление карты  */
 .addCardSection {
   background: #fff;
   border-radius: 16px;
@@ -301,8 +419,14 @@
 
 .description {
   font-size: 14px;
-  color: #6b7280;
   margin-bottom: 24px;
+  color: rgb(113, 142, 191);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .formContainer {
@@ -315,6 +439,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
 
 .inputField {
@@ -323,18 +448,25 @@
   border: 1px solid #ccc;
   border-radius: 12px;
   font-size: 16px;
-  background-color: #fff;
+  background-color: #f1f2f6;
   color: #333;
   outline: none;
   transition: border-color 0.3s;
+  margin-top: 4px;
 }
+
 .inputField:focus {
   border-color: #007bff;
 }
 
 .selectField {
   appearance: none;
+  padding: 12px;
   padding-right: 36px;
+  border-radius: 8px;
+  background-color: #f1f2f6;
+  border: none;
+  margin-top: 4px;
 }
 
 .addCardButton {
@@ -360,9 +492,9 @@
   background: #2563eb;
 }
 
-/* --- Настройки карт --- */
+/*  Настройки карт  */
 .cardSettings {
-  flex: 1;
+  width: 450px;
   background: #fff;
   border-radius: 16px;
   padding: 24px;
@@ -398,24 +530,29 @@
   gap: 24px;
   margin-bottom: 24px;
 }
-
-.inputGroup {
-  flex: 1;
+.cardFooterOverlay {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0) 100%
+  );
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.inputField {
-  background-color: #f1f2f6;
-  padding: 12px;
-  border-radius: 8px;
-  margin-top: 4px;
-}
-
-.selectField {
-  padding: 12px;
-  border-radius: 8px;
-  background-color: #f1f2f6;
-  border: none;
-  margin-top: 4px;
+.cardFooterOverlay .cardFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
 }

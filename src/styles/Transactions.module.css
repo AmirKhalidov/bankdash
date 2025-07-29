@@ -1,4 +1,5 @@
 /* MAIN */
+
 main {
   grid-column: 2;
   background-color: rgb(245, 247, 250);
@@ -10,6 +11,7 @@ main {
   display: flex;
   gap: 30px;
   margin-bottom: 24px;
+  align-items: flex-end;
 }
 
 .myCards {
@@ -412,74 +414,150 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  cursor: pointer;
 }
 
 .amountBtn {
   display: flex;
   align-items: center;
-  justify-content: start;
-  gap: 28px;
+  justify-content: space-between;
 }
 
 .amountBtn img {
   cursor: pointer;
 }
 
-.selectedTransferImg {
-  box-shadow: 0 0 0 3px #1814f3;
-  border-radius: 50%;
+.transactionChart {
+  width: 350px;
+  height: 242px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-.inputDiv {
-  width: 100%;
+input[type="radio"] {
+  display: none;
 }
 
-.amountInput {
-  background-color: #edf1f7;
-  width: 65%;
-  padding: 16px 0px 16px 32px;
-  border-radius: 50px;
+input[type="radio"]:checked + span {
+  border-bottom: 3px rgb(24, 20, 243) solid;
 }
 
-.amountBtnClickable {
-  all: unset;
+input[type="radio"] + span {
+  padding: 8px 11px;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+.transactionsFilters {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+  gap: 60px;
+  border-bottom: 1px gray solid;
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
 
-.modal {
-  background: #fff;
-  padding: 32px 40px;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  min-width: 300px;
-}
-
-.text {
-  font-size: 18px;
-  margin-bottom: 24px;
-}
-
-.button {
-  padding: 8px 24px;
-  border-radius: 6px;
-  border: none;
-  background: #16dbcc;
-  color: #fff;
+.resent {
+  color: rgb(52, 60, 106);
+  font-size: 22px;
   font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+/* --------------- */
+
+.container {
+  font-family: sans-serif;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0px 30px;
+}
+
+.table th,
+.table td {
+  padding: 12px 0;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.table thead {
+  color: #4a6fa1;
+}
+
+.arrow {
+  margin-right: 8px;
+  border: 2px solid rgb(113, 142, 191);
+  border-radius: 100%;
+  padding: 5px 9px;
+}
+
+.up {
+  color: rgb(113, 142, 191);
+}
+
+.down {
+  color: rgb(113, 142, 191);
+}
+
+.positive {
+  color: green;
+  /* font-weight: 600; */
+}
+
+.negative {
+  color: red;
+  /* font-weight: 600; */
+}
+
+.downloadBtn {
+  padding: 6px 12px;
+  border: 1px solid rgb(18, 50, 136);
+  background: none;
+  border-radius: 20px;
+  color: rgb(18, 50, 136);
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: 0.2s;
+}
+
+.downloadBtn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* --- */
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 12px;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+
+.pageButton,
+.navButton {
+  border: none;
+  background: transparent;
+  color: blue;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover,
+.navButton:hover {
+  text-decoration: underline;
+}
+
+.active {
+  background-color: blue;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
 }
