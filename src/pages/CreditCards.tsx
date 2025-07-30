@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/CreditCards.module.css";
+import {
+  ResponsiveContainer,
+  PieChart,
+  Pie,
+  Cell,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 interface Card {
   id: number;
@@ -168,6 +176,19 @@ export default function CreditCards() {
       nameOnCard: "Edward",
     },
   ]);
+  const data = [
+    { name: "DBL Bank", value: 400 },
+    { name: "BRC Bank", value: 300 },
+    { name: "ABM Bank", value: 300 },
+    { name: "MCP Bank", value: 200 },
+  ];
+
+  const COLORS = [
+    "rgb(76, 120, 255)",
+    "rgb(22, 219, 204)",
+    "rgb(255, 187, 56)",
+    "rgb(255, 130, 172)",
+  ];
 
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedCardListItem, setSelectedCardListItem] =
@@ -550,8 +571,33 @@ export default function CreditCards() {
       <section className={styles.statisticsSection}>
         <div className={styles.sectionStats}>
           <h3 className={styles.sectionSubtitle}>Card Expense Statistics</h3>
-          <div className={styles.statsChart}>
-            <img src="src/assets/creditCards/Group 351.png" alt="pic" />
+          <div
+            className={styles.statsChart}
+            style={{ width: "100%", height: 300 }}
+          >
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie
+                  data={data}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  fill="#8884d8"
+                  label={false}
+                >
+                  {data.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend verticalAlign="bottom" height={36} />
+              </PieChart>
+            </ResponsiveContainer>
           </div>
         </div>
 

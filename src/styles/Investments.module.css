@@ -197,3 +197,84 @@
 .tableCell.negative {
   color: rgb(254, 92, 115);
 }
+.investmentCard {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.investmentCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+.tableRow:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.3s ease;
+}
+/* Модальное окно */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+}
+
+.modalImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+
+.modalContent h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.modalContent p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #4b5563;
+}
+
+.modalContent p strong {
+  color: #111827;
+}
+
+.returnPositive {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.returnNegative {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
