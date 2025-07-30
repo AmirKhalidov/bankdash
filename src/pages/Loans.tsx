@@ -61,57 +61,75 @@ const Loans: React.FC = () => {
           className={styles.filterCard}
           onClick={() => handleFilter("50000")}
         >
-          <div className={styles.iconContainer}>
-            <img
-              src="./src/assets/services/bankservice-4.png"
-              alt="icon1"
-              className={styles.icon}
-            />
+          <div className={styles.cardContent}>
+            <div className={styles.iconContainer}>
+              <img
+                src="./src/assets/services/bankservice-4.png"
+                alt="icon1"
+                className={styles.icon}
+              />
+            </div>
+            <div className={styles.textContent}>
+              <div className={styles.filterSubtitle}>Personal Loans</div>
+              <div className={styles.filterTitle}>$50,000</div>
+            </div>
           </div>
-          <div className={styles.filterSubtitle}>Get loans above $50k</div>
-          <div className={styles.filterTitle}>50,000</div>
         </div>
         <div
           className={styles.filterCard}
           onClick={() => handleFilter("100000")}
         >
-          <div className={styles.iconContainer}>
-            <img
-              src="./src/assets/services/bankservice-2.png"
-              alt="icon2"
-              className={styles.icon}
-            />
+          <div className={styles.cardContent}>
+            <div className={styles.iconContainer}>
+              <img
+                src="./src/assets/services/bankservice-2.png"
+                alt="icon2"
+                className={styles.icon}
+              />
+            </div>
+            <div className={styles.textContent}>
+              <div className={styles.filterSubtitle}>Corporate Loans</div>
+              <div className={styles.filterTitle}>$100,000</div>
+            </div>
           </div>
-          <div className={styles.filterSubtitle}>Loans above $100k</div>
-          <div className={styles.filterTitle}>100,000</div>
         </div>
+
         <div
           className={styles.filterCard}
           onClick={() => handleFilter("200000")}
         >
-          <div className={styles.iconContainer}>
-            <img
-              src="./src/assets/services/bankservice-3.png"
-              alt="icon3"
-              className={styles.icon}
-            />
+          <div className={styles.cardContent}>
+            <div className={styles.iconContainer}>
+              <img
+                src="./src/assets/services/bankservice-3.png"
+                alt="icon3"
+                className={styles.icon}
+              />
+            </div>
+            <div className={styles.textContent}>
+              <div className={styles.filterSubtitle}>Business Loans</div>
+              <div className={styles.filterTitle}>$500,000</div>
+            </div>
           </div>
-          <div className={styles.filterSubtitle}>Loans above $200k</div>
-          <div className={styles.filterTitle}>200,000</div>
         </div>
+
         <div
           className={styles.filterCard}
           onClick={() => handleFilter("custom")}
         >
-          <div className={styles.iconContainer}>
-            <img
-              src="./src/assets/services/custom-loans.png"
-              alt="icon4"
-              className={styles.icon}
-            />
+          <div className={styles.cardContent}>
+            <div className={styles.iconContainer}>
+              <img
+                src="./src/assets/services/custom-loans.png"
+                alt="icon4"
+                className={styles.icon}
+              />
+            </div>
+            <div className={styles.textContent}>
+              <div className={styles.filterSubtitle}>Custom Loans</div>
+              <div className={styles.filterTitle}>Choose Money</div>
+            </div>
           </div>
-          <div className={styles.filterSubtitle}>Choose your amount</div>
-          <div className={styles.filterTitle}>Custom</div>
         </div>
       </div>
 
@@ -122,11 +140,11 @@ const Loans: React.FC = () => {
           <tr>
             <th>SL No</th>
             <th>Loan Money</th>
-            <th>Left to pay</th>
+            <th>Left to repay</th>
             <th>Duration</th>
             <th>Interest rate</th>
             <th>Installment</th>
-            <th>Action</th>
+            <th>Repay</th>
           </tr>
         </thead>
         <tbody>
@@ -134,12 +152,17 @@ const Loans: React.FC = () => {
             <tr key={loan.id}>
               <td>{index + 1}</td>
               <td>${loan.loanMoney?.toLocaleString() || "0"}</td>
-              <td>${loan.leftToPay?.toLocaleString() || "0"}</td>
+              <td>${loan.leftToRepay?.toLocaleString() || "0"}</td>
               <td>{loan.duration}</td>
               <td>{loan.interestRate}</td>
               <td>${loan.installment}</td>
               <td>
-                <button onClick={() => handleRepaid(loan.id)}>Repaid</button>
+                <button
+                  className={styles.buttonrepay}
+                  onClick={() => handleRepaid(loan.id)}
+                >
+                  Repay
+                </button>
               </td>
             </tr>
           ))}
@@ -156,7 +179,9 @@ const Loans: React.FC = () => {
           value={customAmount ?? ""}
           onChange={(e) => setCustomAmount(Number(e.target.value))}
         />
-        <button onClick={handleApplyCustom}>Apply</button>
+        <button className={styles.buttons} onClick={handleApplyCustom}>
+          Apply
+        </button>
       </AppModal>
 
       <AppModal
@@ -165,8 +190,15 @@ const Loans: React.FC = () => {
         title="Confirm Payment"
       >
         <p>Are you sure you want to pay this loan?</p>
-        <button onClick={handleConfirmRepaid}>Yes</button>
-        <button onClick={() => setRepaidModalOpen(false)}>No</button>
+        <button className={styles.buttons} onClick={handleConfirmRepaid}>
+          Yes
+        </button>
+        <button
+          className={styles.buttons}
+          onClick={() => setRepaidModalOpen(false)}
+        >
+          No
+        </button>
       </AppModal>
     </div>
   );

@@ -1,37 +1,46 @@
 .filtersContainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  justify-content: center;
+  justify-items: center;
   margin-bottom: 30px;
+  margin-top: 20px;
+  padding: 0 20px;
 }
-
 .filterCard {
-  flex: 1;
-  width: 180px;
   padding: 16px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filterCard:active {
+  transform: scale(0.98);
 }
 
 .filterCard:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .iconContainer {
-  background-color: #f0f0f0;
+  background-color: #eef1ff;
   border-radius: 50%;
   padding: 10px;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
 }
 
 .icon {
@@ -40,16 +49,24 @@
 }
 
 .filterTitle {
+  color: rgb(35, 35, 35);
+  font-size: 20px;
   font-weight: 600;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 4px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .filterSubtitle {
-  font-size: 12px;
-  color: #777;
   text-align: center;
+  white-space: nowrap;
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .heading {
@@ -75,9 +92,10 @@
   line-height: 100%;
 }
 
-button {
-  border: 1px solid rgb(113, 142, 191);
-  color: rgb(113, 142, 191);
+.buttonrepay {
+  box-sizing: border-box;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 50px;
   background-color: transparent;
   padding: 6px 12px;
   border-radius: 20px;
@@ -85,12 +103,40 @@ button {
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 500;
+  width: 100px;
+  height: 35px;
 }
 
-button:hover {
-  background-color: #1814f3;
+.buttonrepay:hover {
+  color: rgb(24, 20, 243);
+  box-sizing: border-box;
+  border: 1px solid rgb(24, 20, 243);
+  border-radius: 50px;
 }
 
-button:focus {
+.buttonrepay:focus {
   outline: none;
+}
+
+.buttonrepay:active {
+  transform: scale(0.98);
+}
+
+.buttons {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  border-color: rgb(24, 20, 243);
+  margin: 4px;
+}
+.buttons:hover {
+  background-color: rgb(24, 20, 243);
+  color: white;
+}
+.buttons:active {
+  transform: scale(0.98);
 }
