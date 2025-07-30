@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchLoans, filterLoans, removeLoan } from "../redux/loanSlice";
+import {
+  fetchLoans,
+  filterLoansByAmount,
+  removeLoan,
+} from "../redux/loanSlice";
 import { type RootState, type AppDispatch } from "../services/store";
 import AppModal from "../components/AppModal";
 import styles from "../styles/Loans.module.css";
@@ -28,13 +32,13 @@ const Loans: React.FC = () => {
       setCustomModalOpen(true);
     } else {
       const amount = parseInt(amountStr);
-      dispatch(filterLoans((loan) => loan.loanMoney >= amount));
+      dispatch(filterLoansByAmount(amount));
     }
   };
 
   const handleApplyCustom = () => {
     if (customAmount !== null) {
-      dispatch(filterLoans((loan) => loan.loanMoney >= customAmount));
+      dispatch(filterLoansByAmount(customAmount));
       setCustomModalOpen(false);
     }
   };
@@ -168,6 +172,7 @@ const Loans: React.FC = () => {
           ))}
         </tbody>
       </table>
+
       <AppModal
         isOpen={isCustomModalOpen}
         onClose={() => setCustomModalOpen(false)}

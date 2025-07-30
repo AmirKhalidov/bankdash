@@ -8,7 +8,7 @@ import { api } from "../services/api_service";
 interface Loan {
   id: number;
   loanMoney: number;
-  leftToPay: number;
+  leftToRepay: number;
   duration: string;
   interestRate: string;
   installment: string | number;
@@ -32,9 +32,9 @@ const loansSlice = createSlice({
   name: "loans",
   initialState,
   reducers: {
-    filterLoans(state, action: PayloadAction<(loan: Loan) => boolean>) {
+    filterLoansByAmount(state, action: PayloadAction<number>) {
       state.filteredLoans = state.loans
-        .filter(action.payload)
+        .filter((loan) => loan.loanMoney >= action.payload)
         .slice()
         .sort((a, b) => a.loanMoney - b.loanMoney);
     },
@@ -65,10 +65,12 @@ const loansSlice = createSlice({
       });
   },
 });
+
 export const fetchLoans = createAsyncThunk("loans/fetchLoans", async () => {
   const data = await api.getLoans();
   return data;
 });
 
-export const { filterLoans, resetFilter, removeLoan } = loansSlice.actions;
+export const { filterLoansByAmount, resetFilter, removeLoan } =
+  loansSlice.actions;
 export default loansSlice.reducer;
