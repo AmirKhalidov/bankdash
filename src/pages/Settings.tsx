@@ -7,16 +7,12 @@ import { fetchSettingsData } from "../redux/operations";
 import { useSelector } from "react-redux";
 import Spinner from "../components/Spinner";
 export default function Settings() {
-  const { loading, editProfile } = useSelector(
-    (state: RootState) => state.settings
-  );
+  const { loading } = useSelector((state: RootState) => state.settings);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(fetchSettingsData());
   }, [dispatch]);
-
-  console.log("editProfile", editProfile);
 
   return (
     <>
