@@ -153,7 +153,7 @@ export default function CreditCards() {
   const [cardList] = useState<CardListItem[]>([
     {
       id: 1,
-      imgSrc: "src/assets/creditCards/credit-card 1.png",
+      imgSrc: "src/assets/creditCards/Group.svg",
       cardType: "Secondary",
       bank: "DBL Bank",
       cardNumber: "**** **** 5600",
@@ -161,7 +161,7 @@ export default function CreditCards() {
     },
     {
       id: 2,
-      imgSrc: "src/assets/creditCards/Group.png",
+      imgSrc: "src/assets/creditCards/Group (1).svg",
       cardType: "Secondary",
       bank: "BRC Bank",
       cardNumber: "**** **** 4300",
@@ -169,7 +169,7 @@ export default function CreditCards() {
     },
     {
       id: 3,
-      imgSrc: "src/assets/creditCards/credit-card 1-2.png",
+      imgSrc: "src/assets/creditCards/Group (2).svg",
       cardType: "Secondary",
       bank: "ABM Bank",
       cardNumber: "**** **** 7560",
