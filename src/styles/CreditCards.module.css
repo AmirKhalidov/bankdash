@@ -357,16 +357,24 @@ input[type="text"] {
 }
 
 .cardItemLabel {
-  font-size: 12px;
+  color: rgb(35, 35, 35);
+  font-family: Inter;
+  font-size: 16px;
   font-weight: 500;
-  color: #6b7280;
-  margin-bottom: 4px;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 7px;
 }
 
 .cardItemValue {
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
+  color: rgb(113, 142, 191);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .cardItemButton {
@@ -515,21 +523,37 @@ h3 {
 }
 
 .settingTitle {
-  font-weight: 700;
+  color: rgb(35, 35, 35);
+  font-family: Inter;
   font-size: 16px;
-  margin-bottom: 4px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 7px;
 }
 
 .settingDescription {
-  font-size: 14px;
-  color: #6b7280;
-  margin: 0;
+  color: rgb(113, 142, 191);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 
 .row {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
+  color: rgb(35, 35, 35);
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
 }
 .cardFooterOverlay {
   width: 100%;

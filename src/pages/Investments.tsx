@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearSelectedInvestment, selectInvestment } from "../redux/uiSlice";
+import type { RootState } from "../redux/store";
 import styles from "../styles/Investments.module.css";
-
 import {
   ResponsiveContainer,
   LineChart,
@@ -11,112 +12,17 @@ import {
   CartesianGrid,
 } from "recharts";
 
-interface Investment {
-  name: string;
-  sector: string;
-  amount: string;
-  returnValue: string;
-  image: string;
-}
-
-interface TrendingStock {
-  name: string;
-  price: string;
-  returnValue: string;
-}
-
-interface PerformanceStat {
-  id: string;
-  imgSrc: string;
-  imgAlt: string;
-  label: string;
-  value: string;
-  valueClassName?: string;
-}
-
-const investments: Investment[] = [
-  {
-    name: "Apple Store",
-    sector: "E-commerce, Marketplace",
-    amount: "$54,000",
-    returnValue: "+16%",
-    image: "src/assets/investments/Group 245.png",
-  },
-  {
-    name: "Samsung Mobile",
-    sector: "E-commerce, Marketplace",
-    amount: "$25,300",
-    returnValue: "-4%",
-    image: "src/assets/investments/Group 875.png",
-  },
-  {
-    name: "Tesla Motors",
-    sector: "Electric Vehicles",
-    amount: "$8,200",
-    returnValue: "+25%",
-    image: "src/assets/investments/Group 876.png",
-  },
-];
-
-const trendingStocks: TrendingStock[] = [
-  { name: "Trivago", price: "$520", returnValue: "+5%" },
-  { name: "Canon", price: "$480", returnValue: "+10%" },
-  { name: "Uber Food", price: "$350", returnValue: "-3%" },
-  { name: "Nokia", price: "$940", returnValue: "+2%" },
-  { name: "Tiktok", price: "$670", returnValue: "-12%" },
-];
-
-const yearlyData = [
-  { year: "2017", invested: 40000 },
-  { year: "2018", invested: 45000 },
-  { year: "2019", invested: 50000 },
-  { year: "2020", invested: 70000 },
-  { year: "2021", invested: 90000 },
-  { year: "2022", invested: 110000 },
-];
-
-const monthlyData = [
-  { month: "Jan", revenue: 8000 },
-  { month: "Feb", revenue: 9000 },
-  { month: "Mar", revenue: 10000 },
-  { month: "Apr", revenue: 12000 },
-  { month: "May", revenue: 14000 },
-  { month: "Jun", revenue: 16000 },
-  { month: "Jul", revenue: 15000 },
-  { month: "Aug", revenue: 17000 },
-  { month: "Sep", revenue: 18000 },
-  { month: "Oct", revenue: 19000 },
-  { month: "Nov", revenue: 20000 },
-  { month: "Dec", revenue: 22000 },
-];
-
-const performanceStats: PerformanceStat[] = [
-  {
-    id: "totalInvested",
-    imgSrc: "src/assets/investments/Group 303.png",
-    imgAlt: "Total",
-    label: "Total Invested Amount",
-    value: "$150,000",
-  },
-  {
-    id: "numInvestments",
-    imgSrc: "src/assets/investments/Group 305.png",
-    imgAlt: "Count",
-    label: "Number of Investments",
-    value: "1,250",
-  },
-  {
-    id: "rateReturn",
-    imgSrc: "src/assets/investments/Group 307.png",
-    imgAlt: "Return",
-    label: "Rate of Return",
-    value: "+5.80%",
-  },
-];
-
 export default function Investments() {
-  const [selectedInvestment, setSelectedInvestment] =
-    useState<Investment | null>(null);
+  const dispatch = useDispatch();
+  const { investments, performanceStats } = useSelector(
+    (state: RootState) => state.investments
+  );
+  const { trendingStocks, monthlyData, yearlyData } = useSelector(
+    (state: RootState) => state.trending
+  );
+  const selectedInvestment = useSelector(
+    (state: RootState) => state.ui.selectedInvestment
+  );
 
   const getReturnClass = (value: string) => {
     if (value.startsWith("-")) return styles.negative;
@@ -128,14 +34,6 @@ export default function Investments() {
     ...stat,
     valueClassName: stat.id === "rateReturn" ? getReturnClass(stat.value) : "",
   }));
-
-  const openModal = (investment: Investment) => {
-    setSelectedInvestment(investment);
-  };
-
-  const closeModal = () => {
-    setSelectedInvestment(null);
-  };
 
   return (
     <main className={styles.main}>
@@ -212,7 +110,7 @@ export default function Investments() {
               <div
                 key={i}
                 className={styles.investmentCard}
-                onClick={() => openModal(inv)}
+                onClick={() => dispatch(selectInvestment(inv))}
               >
                 <img
                   src={inv.image}
@@ -257,9 +155,7 @@ export default function Investments() {
               <tbody className={styles.tableBody}>
                 {trendingStocks.map((stock, index) => (
                   <tr key={stock.name} className={styles.tableRow}>
-                    <td className={styles.tableCell}>
-                      {(index + 1).toString()}
-                    </td>
+                    <td className={styles.tableCell}>{index + 1}</td>
                     <td className={styles.tableCell}>{stock.name}</td>
                     <td className={styles.tableCell}>{stock.price}</td>
                     <td
@@ -278,12 +174,18 @@ export default function Investments() {
       </section>
 
       {selectedInvestment && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
+        <div
+          className={styles.modalOverlay}
+          onClick={() => dispatch(clearSelectedInvestment())}
+        >
           <div
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className={styles.closeButton} onClick={closeModal}>
+            <button
+              className={styles.closeButton}
+              onClick={() => dispatch(clearSelectedInvestment())}
+            >
               ×
             </button>
             <img
