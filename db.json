@@ -25,7 +25,177 @@
         "currentPassword": "charlenereed",
         "newPassword": ""
       }
-    }
+    },
+    "loans": [
+      {
+        "id": 1,
+        "loanMoney": 100000,
+        "leftToRepay": 40500,
+        "duration": "8 Months",
+        "interestRate": "12%",
+        "installment": 2000
+      },
+      {
+        "id": 2,
+        "loanMoney": 500000,
+        "leftToRepay": 250000,
+        "duration": "36 Months",
+        "interestRate": "10%",
+        "installment": 8000
+      },
+      {
+        "id": 3,
+        "loanMoney": 900000,
+        "leftToRepay": 40500,
+        "duration": "12 Months",
+        "interestRate": "12%",
+        "installment": 5000
+      },
+      {
+        "id": 4,
+        "loanMoney": 50000,
+        "leftToRepay": 40500,
+        "duration": "25 Months",
+        "interestRate": "5%",
+        "installment": 2000
+      },
+      {
+        "id": 5,
+        "loanMoney": 50000,
+        "leftToRepay": 40500,
+        "duration": "5 Months",
+        "interestRate": "16%",
+        "installment": 10000
+      },
+      {
+        "id": 6,
+        "loanMoney": 80000,
+        "leftToRepay": 25500,
+        "duration": "14 Months",
+        "interestRate": "8%",
+        "installment": 2000
+      },
+      {
+        "id": 7,
+        "loanMoney": 12000,
+        "leftToRepay": 5500,
+        "duration": "9 Months",
+        "interestRate": "13%",
+        "installment": 500
+      },
+      {
+        "id": 8,
+        "loanMoney": 160000,
+        "leftToRepay": 100800,
+        "duration": "3 Months",
+        "interestRate": "12%",
+        "installment": 900
+      }
+    ],
+    "bankServices": [
+      {
+        "id": 1,
+        "icon": "./src/assets/services/bankservice-3.png",
+        "title": "Checking Accounts",
+        "subtitle": "Easy access to your money",
+        "col1": "No minimum balance",
+        "col1Desc": "Access anytime",
+        "col2": "Debit Card",
+        "col2Desc": "Free with account",
+        "col3": "Online Banking",
+        "col3Desc": "24/7 access",
+        "details": "Our checking accounts come with free debit cards and online banking. Manage your finances easily.",
+        "additionalInfo": "No monthly fees.",
+        "offer": "First month free!",
+        "validity": "Ongoing",
+        "contact": "Visit branch or call 555-1234"
+      },
+      {
+        "id": 2,
+        "icon": "./src/assets/services/bankservice-2.png",
+        "title": "Home Mortgages",
+        "subtitle": "Affordable home loans",
+        "col1": "Interest Rate",
+        "col1Desc": "3.75% fixed",
+        "col2": "Max Loan",
+        "col2Desc": "$500,000",
+        "col3": "Terms",
+        "col3Desc": "Up to 30 years",
+        "details": "Get your dream home with our competitive mortgage rates. Flexible payment plans available.",
+        "additionalInfo": "Pre-approval in 48 hours.",
+        "offer": "Lowest rates in town!",
+        "validity": "Limited time offer",
+        "contact": "Call 555-5678"
+      },
+      {
+        "id": 3,
+        "icon": "./src/assets/services/bankservice-1.png",
+        "title": "Savings Accounts",
+        "subtitle": "Grow your savings",
+        "col1": "High Interest",
+        "col1Desc": "Up to 2.5%",
+        "col2": "No Fees",
+        "col2Desc": "No monthly charges",
+        "col3": "Easy Transfers",
+        "col3Desc": "Instant online transfers",
+        "details": "Save effortlessly with competitive interest rates and zero monthly fees. Transfer money easily online.",
+        "additionalInfo": "Bonus interest for balances over $10,000.",
+        "offer": "Open today and get a welcome bonus!",
+        "validity": "Ongoing",
+        "contact": "Visit branch or call 555-9012"
+      },
+      {
+        "id": 4,
+        "icon": "./src/assets/services/bankservice-4.png",
+        "title": "Personal Loans",
+        "subtitle": "Fast and flexible",
+        "col1": "Loan Amounts",
+        "col1Desc": "$1,000 - $50,000",
+        "col2": "Interest Rate",
+        "col2Desc": "5.99% fixed",
+        "col3": "Re payment",
+        "col3Desc": "6-60 months",
+        "details": "Need extra funds? Get a quick personal loan with competitive rates and flexible repayment options.",
+        "additionalInfo": "Fast approval within 24 hours.",
+        "offer": "Special rates for loyal customers!",
+        "validity": "Limited time",
+        "contact": "Call 555-3456"
+      },
+      {
+        "id": 5,
+        "icon": "./src/assets/services/bankservice-2.png",
+        "title": "Business Accounts",
+        "subtitle": "Manage your business finances",
+        "col1": "Multiple Users",
+        "col1Desc": "Add team members",
+        "col2": "Online Tools",
+        "col2Desc": "Payroll, invoicing",
+        "col3": "Custom Services",
+        "col3Desc": "Tailored solutions",
+        "details": "Streamline your business finances with our dedicated business banking solutions, including multiple user access and online tools.",
+        "additionalInfo": "Free consultations available.",
+        "offer": "Open an account today and get a free consultation!",
+        "validity": "Ongoing",
+        "contact": "Visit branch or call 555-7890"
+      },
+      {
+        "id": 6,
+        "icon": "./src/assets/services/bankservice-1.png",
+        "title": "Savings Accounts",
+        "subtitle": "Grow your savings",
+        "col1": "High Interest",
+        "col1Desc": "Up to 2.5%",
+        "col2": "No Fees",
+        "col2Desc": "No monthly charges",
+        "col3": "Easy Transfers",
+        "col3Desc": "Instant online transfers",
+        "details": "Save effortlessly with competitive interest rates and zero monthly fees. Transfer money easily online.",
+        "additionalInfo": "Bonus interest for balances over $10,000.",
+        "offer": "Open today and get a welcome bonus!",
+        "validity": "Ongoing",
+        "contact": "Visit branch or call 555-9012"
+      }
+    ]
   },
   "cards": [
     {
@@ -77,7 +247,7 @@
       "description": "Deposit Paypal",
       "transactionDate": "25 January 2021",
       "amount": 2500,
-      "type": "paypal",
+      "type": "Paypal",
       "status": "completed",
       "icon": "paypal",
       "card": "1234 ****"
@@ -88,7 +258,7 @@
       "description": "Jemi Wilson",
       "transactionDate": "21 January 2021",
       "amount": 5400,
-      "type": "transfer",
+      "type": "Transfer",
       "status": "completed",
       "icon": "user",
       "card": "5677 ****"
@@ -230,93 +400,6 @@
       "return": "+25%",
       "returnType": "positive",
       "icon": "tesla"
-    }
-  ],
-  "loans": [
-    {
-      "id": "1",
-      "userId": 1,
-      "loanType": "Personal Loan",
-      "amount": 8500,
-      "totalRepayment": 40500,
-      "interestRate": 4.5,
-      "duration": "8 Months",
-      "monthlyPayment": 2500,
-      "status": "active",
-      "startDate": "2024-01-15",
-      "endDate": "2024-09-15"
-    },
-    {
-      "id": "2",
-      "userId": 1,
-      "loanType": "Corporate Loan",
-      "amount": 12500,
-      "totalRepayment": 54500,
-      "interestRate": 3.5,
-      "duration": "12 Months",
-      "monthlyPayment": 3500,
-      "status": "active",
-      "startDate": "2024-02-01",
-      "endDate": "2025-02-01"
-    },
-    {
-      "id": "3",
-      "userId": 1,
-      "loanType": "Business Loan",
-      "amount": 15000,
-      "totalRepayment": 65000,
-      "interestRate": 5,
-      "duration": "18 Months",
-      "monthlyPayment": 4200,
-      "status": "pending",
-      "startDate": "2024-03-01",
-      "endDate": "2025-09-01"
-    }
-  ],
-  "services": [
-    {
-      "id": "1",
-      "userId": 1,
-      "serviceName": "Life Insurance",
-      "description": "Unlimited protection",
-      "icon": "shield",
-      "status": "active",
-      "monthlyFee": 50,
-      "benefits": ["24/7 Support", "Worldwide Coverage", "Emergency Assistance"]
-    },
-    {
-      "id": "2",
-      "userId": 1,
-      "serviceName": "Shopping",
-      "description": "Buy. Think. Grow.",
-      "icon": "shopping",
-      "status": "active",
-      "monthlyFee": 0,
-      "benefits": ["Cashback Rewards", "Price Protection", "Purchase Insurance"]
-    },
-    {
-      "id": "3",
-      "userId": 1,
-      "serviceName": "Safety",
-      "description": "We are your allies",
-      "icon": "safety",
-      "status": "inactive",
-      "monthlyFee": 25,
-      "benefits": [
-        "Fraud Protection",
-        "Identity Monitoring",
-        "Secure Transactions"
-      ]
-    },
-    {
-      "id": "4",
-      "userId": 1,
-      "serviceName": "Investment",
-      "description": "Grow your wealth",
-      "icon": "investment",
-      "status": "active",
-      "monthlyFee": 15,
-      "benefits": ["Expert Advice", "Portfolio Management", "Market Analysis"]
     }
   ]
 }
