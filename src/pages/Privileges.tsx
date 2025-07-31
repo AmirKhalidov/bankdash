@@ -1,7 +1,6 @@
 export default function Privileges() {
   return (
     <div style={{ textAlign: "center", marginTop: "4rem" }}>
-      <h2>Privileges</h2>
       <p>
         Unlock exclusive benefits and rewards with your account.
         <br />
