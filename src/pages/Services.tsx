@@ -55,11 +55,15 @@ const Services: React.FC = () => {
     if (bankServices.length === 0) return null;
     return bankServices.slice(0, 3).map((service: Service) => (
       <div key={service.id} className={styles.iconBlock}>
-        <div className={styles.iconCircle}>
-          <img src={service.icon} alt={service.title} />
+        <div className={styles.iconContent}>
+          <div className={styles.iconCircle}>
+            <img src={service.icon} alt={service.title} />
+          </div>
+          <div className={styles.textContent}>
+            <h1 className={styles.title}>{service.title}</h1>
+            <p className={styles.subtitle}>{service.subtitle}</p>
+          </div>
         </div>
-        <h4>{service.title}</h4>
-        <p className={styles.text}>{service.subtitle}</p>
       </div>
     ));
   };
@@ -67,7 +71,6 @@ const Services: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.iconBlockWrapper}>{renderIconBlocks()}</div>
-
       <h2>Bank Services List</h2>
 
       {status === "loading" && <p>Loading services...</p>}
