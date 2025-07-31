@@ -100,11 +100,19 @@
 }
 
 .cardBlue {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(
+    135.29deg,
+    rgb(45, 96, 255) 2.413%,
+    rgb(83, 155, 255) 101.106%
+  );
 }
 
 .cardDarkBlue {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(
+    135.29deg,
+    rgb(76, 73, 237) 2.413%,
+    rgb(10, 6, 244) 101.106%
+  );
 }
 
 .cardWhite {
