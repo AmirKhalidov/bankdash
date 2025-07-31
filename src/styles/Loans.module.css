@@ -1,0 +1,142 @@
+.filtersContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.filterCard {
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.filterCard:active {
+  transform: scale(0.98);
+}
+
+.filterCard:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconContainer {
+  background-color: #eef1ff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.filterTitle {
+  color: rgb(35, 35, 35);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.filterSubtitle {
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(113, 142, 191);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.table th {
+  color: #718ebf;
+  line-height: 100%;
+}
+
+.buttonrepay {
+  box-sizing: border-box;
+  border: 1px solid rgb(35, 35, 35);
+  border-radius: 50px;
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  width: 100px;
+  height: 35px;
+}
+
+.buttonrepay:hover {
+  color: rgb(24, 20, 243);
+  box-sizing: border-box;
+  border: 1px solid rgb(24, 20, 243);
+  border-radius: 50px;
+}
+
+.buttonrepay:focus {
+  outline: none;
+}
+
+.buttonrepay:active {
+  transform: scale(0.98);
+}
+
+.buttons {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  border-color: rgb(24, 20, 243);
+  margin: 4px;
+}
+.buttons:hover {
+  background-color: rgb(24, 20, 243);
+  color: white;
+}
+.buttons:active {
+  transform: scale(0.98);
+}

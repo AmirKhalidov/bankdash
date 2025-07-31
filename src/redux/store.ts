@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 import creditCardsReducer from "./creditCardsSlice";
 import transactionsReducer from "./transactionsSlice";
 import settingsReducer from "./settingsSlice";
+import loansReducer from "../redux/loanSlice";
+import servicesReducer from "../redux/servicesSlice";
 
 export const store = configureStore({
   reducer: {
     creditCards: creditCardsReducer,
     transactions: transactionsReducer,
     settings: settingsReducer,
+    loans: loansReducer,
+    services: servicesReducer,
   },
 });
 

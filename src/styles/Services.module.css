@@ -1,0 +1,155 @@
+.container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iconBlockWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.iconBlock {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  margin: 10px auto;
+}
+.iconBlock:active {
+  transform: scale(0.98);
+}
+
+.iconContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.iconCircle img {
+  width: 30px;
+  height: 30px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: rgb(35, 35, 35);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #4a68b1;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9fafc;
+  border-radius: 16px;
+  padding: 16px 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 12px;
+  margin-right: 16px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column h4 {
+  margin: 0;
+  color: #111;
+  font-weight: 600;
+}
+
+.column span {
+  font-size: 13px;
+  color: #4a68b1;
+}
+
+.button {
+  padding: 8px 16px;
+  border: 1px solid #4a68b1;
+  background: #fff;
+  color: #4a68b1;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background: #4a68b1;
+  color: white;
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+.viewDetailsButton {
+  border: 1px solid rgb(113, 142, 191);
+  color: rgb(113, 142, 191);
+  background-color: transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.viewDetailsButton:hover {
+  background-color: #1814f3;
+}
+
+.viewDetailsButton:focus {
+  outline: none;
+}
+.viewDetailsButton:active {
+  transform: scale(0.98);
+}
