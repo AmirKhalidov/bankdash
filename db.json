@@ -26,21 +26,6 @@
         "newPassword": ""
       }
     },
-    "cards": [
-      {
-        "id": 1,
-        "userId": 1,
-        "cardNumber": "3778 **** **** 1234",
-        "cardType": "visa",
-        "cardHolder": "Eddy Cusuma",
-        "validThru": "12/22",
-        "balance": 5756,
-        "theme": "dark"
-      }
-    ],
-    "transactions": [],
-    "accounts": [],
-    "investments": [],
     "loans": [
       {
         "id": 1,
@@ -211,5 +196,210 @@
         "contact": "Visit branch or call 555-9012"
       }
     ]
-  }
+  },
+  "cards": [
+    {
+      "id": "1",
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "visa",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756,
+      "theme": "dark"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "mastercard",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756,
+      "theme": "light"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "cardNumber": "3778 **** **** 1234",
+      "cardType": "visa",
+      "cardHolder": "Eddy Cusuma",
+      "validThru": "12/22",
+      "balance": 5756,
+      "theme": "blue"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "userId": 1,
+      "description": "Deposit from my Card",
+      "transactionDate": "28 January 2021",
+      "amount": -850,
+      "type": "Investment",
+      "status": "pending",
+      "icon": "card",
+      "card": "7511 ****"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "description": "Deposit Paypal",
+      "transactionDate": "25 January 2021",
+      "amount": 2500,
+      "type": "Paypal",
+      "status": "completed",
+      "icon": "paypal",
+      "card": "1234 ****"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "description": "Jemi Wilson",
+      "transactionDate": "21 January 2021",
+      "amount": 5400,
+      "type": "Transfer",
+      "status": "completed",
+      "icon": "user",
+      "card": "5677 ****"
+    },
+    {
+      "id": "4",
+      "userId": 1,
+      "description": "Shopping",
+      "transactionDate": "28 January 2021",
+      "amount": -4000,
+      "type": "Others",
+      "status": "pending",
+      "icon": "shopping",
+      "card": "4632 ****"
+    },
+    {
+      "id": "5",
+      "userId": 1,
+      "description": "Transfer",
+      "transactionDate": "25 January 2021",
+      "amount": -500,
+      "type": "Bill Expense",
+      "status": "completed",
+      "icon": "transfer",
+      "card": "0654 ****"
+    },
+    {
+      "id": "6",
+      "userId": 1,
+      "description": "Movie Tickets",
+      "transactionDate": "01 February 2021",
+      "amount": 720,
+      "type": "Entertainment",
+      "status": "completed",
+      "icon": "entertainment",
+      "card": "2534 ****"
+    },
+    {
+      "id": "7",
+      "userId": 1,
+      "description": "Concert",
+      "transactionDate": "03 February 2021",
+      "amount": -2500,
+      "type": "Entertainment",
+      "status": "completed",
+      "icon": "entertainment",
+      "card": "7543 ****"
+    },
+    {
+      "id": "8",
+      "userId": 1,
+      "description": "Electricity Bill",
+      "transactionDate": "05 February 2021",
+      "amount": -1190,
+      "type": "Bill Expense",
+      "status": "completed",
+      "icon": "bill",
+      "card": "1124 ****"
+    },
+    {
+      "id": "9",
+      "userId": 1,
+      "description": "Stock Purchase",
+      "transactionDate": "07 February 2021",
+      "amount": -1200,
+      "type": "Investment",
+      "status": "completed",
+      "icon": "investment",
+      "card": "8654 ****"
+    },
+    {
+      "id": "10",
+      "userId": 1,
+      "description": "Groceries",
+      "transactionDate": "09 February 2021",
+      "amount": -150,
+      "type": "Others",
+      "status": "completed",
+      "icon": "shopping",
+      "card": "4521 ****"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "accountType": "Checking",
+      "bankName": "DBL Bank",
+      "accountNumber": "**** **** 5600",
+      "balance": 25000,
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "accountType": "Savings",
+      "bankName": "BRC Bank",
+      "accountNumber": "**** **** 4300",
+      "balance": 25000,
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "accountType": "Investment",
+      "bankName": "ABM Bank",
+      "accountNumber": "**** **** 7000",
+      "balance": 25000,
+      "status": "active"
+    }
+  ],
+  "investments": [
+    {
+      "id": "1",
+      "userId": 1,
+      "company": "Apple Store",
+      "symbol": "AAPL",
+      "amount": 54000,
+      "return": "+16%",
+      "returnType": "positive",
+      "icon": "apple"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "company": "Samsung Mobile",
+      "symbol": "SMSN",
+      "amount": 25300,
+      "return": "-4%",
+      "returnType": "negative",
+      "icon": "samsung"
+    },
+    {
+      "id": "3",
+      "userId": 1,
+      "company": "Tesla Motors",
+      "symbol": "TSLA",
+      "amount": 8200,
+      "return": "+25%",
+      "returnType": "positive",
+      "icon": "tesla"
+    }
+  ]
 }
