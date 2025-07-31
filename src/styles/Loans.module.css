@@ -19,9 +19,13 @@
   justify-content: center;
 }
 .filterCard:active {
-  transform: scale(0.98);
+  transform: scale(1.3);
 }
-
+.filterCard:hover {
+  transform: scale(1.02);
+  background-color: #f9f9f9;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
 .filterCard:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
@@ -112,6 +116,7 @@
   box-sizing: border-box;
   border: 1px solid rgb(24, 20, 243);
   border-radius: 50px;
+  transform: scale(0.98);
 }
 
 .buttonrepay:focus {
@@ -136,6 +141,7 @@
 .buttons:hover {
   background-color: rgb(24, 20, 243);
   color: white;
+  transform: scale(1.02);
 }
 .buttons:active {
   transform: scale(0.98);
